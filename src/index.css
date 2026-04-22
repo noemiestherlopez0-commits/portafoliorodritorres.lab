@@ -2,55 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=Caveat:wght@400;600;700&display=swap');
+
 @layer base {
   :root {
-    --color-forest: #7da866;
-    --color-orange: #e08246;
-    --color-dark: #0c120c;
-    --color-cream: #fdf9f1;
+    --color-bg:        #0a0f0a;
+    --color-card:      #141c14;
+    --color-border:    #1e3a1e;
+    --color-forest:    #7da866;
+    --color-orange:    #e08246;
+    --color-cream:     #fdf9f1;
   }
 
   html {
-    background-color: #0c120c;
+    background-color: var(--color-bg);
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-dark text-white font-sans antialiased;
+    background-color: var(--color-bg);
+    color: #ffffff;
+    font-family: 'Space Mono', monospace;
+    -webkit-font-smoothing: antialiased;
     min-height: 100vh;
   }
 }
 
 @layer utilities {
+  /* Green glow on hover for bento cards */
+  .card-glow {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .card-glow:hover {
+    box-shadow: 0 0 0 1px #7da86640, 0 4px 32px 0 #7da86620;
+    border-color: #7da866 !important;
+  }
+
+  /* Flip card */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .card-flip {
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-flip.flipped {
+    transform: rotateY(180deg);
+  }
+  .card-face {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .card-back {
+    transform: rotateY(180deg);
+  }
+
+  /* Wobble border */
   .wobbly-border {
     border: 2.5px solid;
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     transition: border-radius 0.5s ease;
   }
-
   .wobbly-border:hover {
     border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-  }
-
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-
-  .card-flip {
-    transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .card-flip.flipped {
-    transform: rotateY(180deg);
-  }
-
-  .card-face {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-
-  .card-back {
-    transform: rotateY(180deg);
   }
 }

@@ -1,32 +1,32 @@
-import { ExternalLink, Circle } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
 const projects = [
   {
     name: 'Gestión Notas ICES',
-    stack: 'Next.js · Supabase',
+    tech: ['Next.js', 'Supabase'],
     status: 'Producción',
     statusColor: '#7da866',
     href: null,
   },
   {
     name: 'ERP Jazmines',
-    stack: 'React · Supabase',
-    status: 'En desarrollo',
+    tech: ['React', 'Supabase'],
+    status: 'Desarrollo',
     statusColor: '#e08246',
     href: null,
   },
   {
     name: 'Classroom ×86',
-    stack: 'Google Workspace',
+    tech: ['Google Workspace'],
     status: 'Activo',
     statusColor: '#7da866',
     href: null,
   },
   {
     name: 'El Colectivo',
-    stack: 'React · Vite · Canvas',
+    tech: ['React', 'Vite', 'Canvas'],
     status: 'Prototipo',
-    statusColor: '#e08246',
+    statusColor: '#8b9aa8',
     href: null,
   },
 ]
@@ -34,44 +34,70 @@ const projects = [
 export default function ProjectsCard() {
   return (
     <div
-      className="bg-dark-card border border-dark-border rounded-2xl p-6 flex flex-col gap-4 animate-fade-in-up"
+      className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-5 animate-fade-in-up col-span-3"
       style={{ animationDelay: '240ms' }}
     >
-      <div className="text-white/40 text-xs uppercase tracking-widest">Proyectos</div>
+      <span className="font-heading font-bold text-white text-sm tracking-wide">
+        Proyectos
+      </span>
 
-      <ul className="flex flex-col gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {projects.map((p) => (
-          <li
+          <div
             key={p.name}
-            className="flex items-center justify-between gap-3 p-3 rounded-xl border border-dark-border hover:border-forest/40 transition-colors"
+            className="card-glow group relative flex flex-col gap-3 p-4 rounded-xl border border-border cursor-default"
           >
-            <div className="flex flex-col gap-0.5 min-w-0">
-              <span className="text-sm text-white font-sans font-bold truncate">{p.name}</span>
-              <span className="text-xs text-white/40 truncate">{p.stack}</span>
-            </div>
-            <div className="flex items-center gap-1.5 flex-shrink-0">
-              <Circle
-                size={7}
-                style={{ fill: p.statusColor, color: p.statusColor }}
+            {/* Status dot */}
+            <div className="flex items-center gap-1.5">
+              <span
+                className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                style={{ backgroundColor: p.statusColor }}
+                aria-hidden="true"
               />
-              <span className="text-xs" style={{ color: p.statusColor }}>
+              <span className="text-xs font-sans" style={{ color: p.statusColor }}>
                 {p.status}
               </span>
-              {p.href && (
-                <a
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/30 hover:text-white transition-colors"
-                  aria-label={`Ver ${p.name}`}
-                >
-                  <ExternalLink size={12} />
-                </a>
-              )}
             </div>
-          </li>
+
+            {/* Name */}
+            <span className="font-heading font-bold text-white text-sm leading-snug">
+              {p.name}
+            </span>
+
+            {/* Tech badges */}
+            <div className="flex flex-wrap gap-1.5 mt-auto">
+              {p.tech.map((t) => (
+                <span
+                  key={t}
+                  className="text-xs font-sans px-2 py-0.5 rounded-md border border-border text-white/40"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            {/* Arrow on hover */}
+            {p.href ? (
+              <a
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-3 right-3 text-white/0 group-hover:text-forest transition-colors"
+                aria-label={`Ver ${p.name}`}
+              >
+                <ArrowUpRight size={15} />
+              </a>
+            ) : (
+              <span
+                className="absolute top-3 right-3 text-white/0 group-hover:text-white/30 transition-colors"
+                aria-hidden="true"
+              >
+                <ArrowUpRight size={15} />
+              </span>
+            )}
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }

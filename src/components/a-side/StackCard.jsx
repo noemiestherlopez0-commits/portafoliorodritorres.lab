@@ -1,33 +1,39 @@
+import { Zap } from 'lucide-react'
+
 const badges = [
-  { label: 'Next.js', category: 'dev' },
-  { label: 'React', category: 'dev' },
-  { label: 'Tailwind CSS', category: 'dev' },
-  { label: 'Supabase', category: 'dev' },
-  { label: 'Vercel', category: 'dev' },
-  { label: 'GitHub', category: 'dev' },
-  { label: 'Google Workspace', category: 'edu' },
-  { label: 'Arduino', category: 'edu' },
-  { label: 'Scratch', category: 'edu' },
+  { label: 'Next.js',           category: 'dev' },
+  { label: 'React',             category: 'dev' },
+  { label: 'Tailwind CSS',      category: 'dev' },
+  { label: 'Supabase',          category: 'dev' },
+  { label: 'Vercel',            category: 'dev' },
+  { label: 'GitHub',            category: 'dev' },
+  { label: 'Google Workspace',  category: 'edu' },
+  { label: 'Arduino',           category: 'edu' },
+  { label: 'Scratch',           category: 'edu' },
 ]
 
 const categoryStyle = {
-  dev: 'border-forest/40 text-forest',
-  edu: 'border-orange/40 text-orange',
+  dev: { borderColor: '#7da86650', color: '#7da866' },
+  edu: { borderColor: '#e0824650', color: '#e08246' },
 }
 
 export default function StackCard() {
   return (
     <div
-      className="bg-dark-card border border-dark-border rounded-2xl p-6 flex flex-col gap-4 animate-fade-in-up"
+      className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-5 animate-fade-in-up col-span-3"
       style={{ animationDelay: '320ms' }}
     >
-      <div className="text-white/40 text-xs uppercase tracking-widest">Stack</div>
+      <div className="flex items-center gap-2">
+        <Zap size={14} className="text-forest" />
+        <span className="font-heading font-bold text-white text-sm tracking-wide">Stack</span>
+      </div>
 
       <div className="flex flex-wrap gap-2">
         {badges.map(({ label, category }) => (
           <span
             key={label}
-            className={`text-xs px-2.5 py-1 rounded-lg border font-sans ${categoryStyle[category]}`}
+            className="text-xs px-3 py-1.5 rounded-lg border font-sans transition-colors hover:bg-white/5"
+            style={categoryStyle[category]}
           >
             {label}
           </span>

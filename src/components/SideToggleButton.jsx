@@ -8,7 +8,7 @@ export default function SideToggleButton({ isBSide, onToggle }) {
       style={
         isBSide
           ? {
-              backgroundColor: '#0c120c',
+              backgroundColor: '#0a0f0a',
               color: '#7da866',
               border: '2px solid #7da866',
               focusRingColor: '#7da866',
