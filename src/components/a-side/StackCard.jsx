@@ -1,42 +1,44 @@
-import { Zap } from 'lucide-react'
-
-const badges = [
-  { label: 'Next.js',           category: 'dev' },
-  { label: 'React',             category: 'dev' },
-  { label: 'Tailwind CSS',      category: 'dev' },
-  { label: 'Supabase',          category: 'dev' },
-  { label: 'Vercel',            category: 'dev' },
-  { label: 'GitHub',            category: 'dev' },
-  { label: 'Google Workspace',  category: 'edu' },
-  { label: 'Arduino',           category: 'edu' },
-  { label: 'Scratch',           category: 'edu' },
+const groups = [
+  {
+    label: 'Desarrollo',
+    items: ['Next.js', 'React', 'Tailwind CSS', 'Supabase', 'Vercel', 'GitHub'],
+    accent: '#8fba74',
+  },
+  {
+    label: 'Educación',
+    items: ['Google Workspace', 'Arduino', 'Scratch'],
+    accent: '#d97b46',
+  },
 ]
-
-const categoryStyle = {
-  dev: { borderColor: '#7da86650', color: '#7da866' },
-  edu: { borderColor: '#e0824650', color: '#e08246' },
-}
 
 export default function StackCard() {
   return (
     <div
-      className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-5 animate-fade-in-up col-span-3"
-      style={{ animationDelay: '320ms' }}
+      className="bg-card rounded-2xl p-7 flex flex-col gap-6 animate-fade-in-up border border-border"
+      style={{ animationDelay: '310ms' }}
     >
-      <div className="flex items-center gap-2">
-        <Zap size={14} className="text-forest" />
-        <span className="font-heading font-bold text-white text-sm tracking-wide">Stack</span>
-      </div>
+      <p className="font-sans text-xs uppercase tracking-widest text-muted">Herramientas</p>
 
-      <div className="flex flex-wrap gap-2">
-        {badges.map(({ label, category }) => (
-          <span
-            key={label}
-            className="text-xs px-3 py-1.5 rounded-lg border font-sans transition-colors hover:bg-white/5"
-            style={categoryStyle[category]}
-          >
-            {label}
-          </span>
+      <div className="flex flex-col gap-5">
+        {groups.map(({ label, items, accent }) => (
+          <div key={label} className="flex flex-col gap-3">
+            <span
+              className="font-sans text-xs font-semibold"
+              style={{ color: accent }}
+            >
+              {label}
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {items.map((item) => (
+                <span
+                  key={item}
+                  className="font-sans text-sm px-3 py-1.5 rounded-lg border border-border text-muted hover:text-warm transition-colors cursor-default"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>

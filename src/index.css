@@ -2,16 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=Caveat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Caveat:wght@400;600;700&display=swap');
 
 @layer base {
   :root {
-    --color-bg:        #0a0f0a;
-    --color-card:      #141c14;
-    --color-border:    #1e3a1e;
-    --color-forest:    #7da866;
-    --color-orange:    #e08246;
-    --color-cream:     #fdf9f1;
+    --color-bg:       #13120e;
+    --color-card:     #1b1a14;
+    --color-border:   #2c2a1f;
+    --color-forest:   #8fba74;
+    --color-orange:   #d97b46;
+    --color-cream:    #fdf8ef;
+    --color-muted:    #7a7464;
   }
 
   html {
@@ -21,21 +22,19 @@
 
   body {
     background-color: var(--color-bg);
-    color: #ffffff;
-    font-family: 'Space Mono', monospace;
+    color: #e8e2d5;
+    font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
   }
 }
 
 @layer utilities {
-  /* Green glow on hover for bento cards */
-  .card-glow {
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  .card-hover {
+    transition: background-color 0.2s ease;
   }
-  .card-glow:hover {
-    box-shadow: 0 0 0 1px #7da86640, 0 4px 32px 0 #7da86620;
-    border-color: #7da866 !important;
+  .card-hover:hover {
+    background-color: #201f18;
   }
 
   /* Flip card */
@@ -44,7 +43,7 @@
   }
   .card-flip {
     transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .card-flip.flipped {
     transform: rotateY(180deg);
@@ -57,9 +56,9 @@
     transform: rotateY(180deg);
   }
 
-  /* Wobble border */
+  /* Wobble border for B side */
   .wobbly-border {
-    border: 2.5px solid;
+    border: 2px solid;
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     transition: border-radius 0.5s ease;
   }

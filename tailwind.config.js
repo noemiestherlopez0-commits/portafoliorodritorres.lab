@@ -7,22 +7,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg:         '#0a0f0a',
-        card:       '#141c14',
-        border:     '#1e3a1e',
-        forest:     '#7da866',
-        orange:     '#e08246',
-        cream:      '#fdf9f1',
-        'card-hover': '#192419',
+        bg:      '#13120e',
+        card:    '#1b1a14',
+        border:  '#2c2a1f',
+        forest:  '#8fba74',
+        orange:  '#d97b46',
+        cream:   '#fdf8ef',
+        muted:   '#7a7464',
+        warm:    '#e8e2d5',
       },
       fontFamily: {
-        sans:    ['"Space Mono"', 'monospace'],
-        heading: ['Syne', 'sans-serif'],
+        sans:    ['Inter', 'sans-serif'],
+        heading: ['"DM Serif Display"', 'serif'],
         hand:    ['Caveat', 'cursive'],
       },
       keyframes: {
         'fade-in-up': {
-          '0%':   { opacity: '0', transform: 'translateY(20px)' },
+          '0%':   { opacity: '0', transform: 'translateY(16px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         wobble: {
@@ -31,7 +32,7 @@ export default {
         },
       },
       animation: {
-        'fade-in-up': 'fade-in-up 0.55s ease both',
+        'fade-in-up': 'fade-in-up 0.5s ease both',
         wobble:       'wobble 8s ease-in-out infinite',
       },
     },

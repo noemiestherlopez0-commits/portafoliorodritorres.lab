@@ -84,15 +84,15 @@ export default function App() {
               front={
                 <div
                   className="h-full rounded-2xl p-6 flex flex-col gap-3"
-                  style={{ backgroundColor: '#fff8ee', border: '2px solid #7da866' }}
+                  style={{ backgroundColor: '#fdf8ef', border: '1.5px solid #8fba7440' }}
                 >
-                  <h2 className="font-hand text-4xl font-bold" style={{ color: '#0a0f0a' }}>
+                  <h2 className="font-hand text-4xl font-bold" style={{ color: '#2a271e' }}>
                     Rodrigo Torres
                   </h2>
-                  <p className="font-hand text-xl" style={{ color: '#4a6b3a' }}>
+                  <p className="font-hand text-xl" style={{ color: '#5c6b4a' }}>
                     Profe · Dev · Ser humano
                   </p>
-                  <p className="font-hand text-sm mt-auto" style={{ color: '#e08246' }}>
+                  <p className="font-hand text-sm mt-auto" style={{ color: '#d97b46' }}>
                     Toca para saber m&aacute;s...
                   </p>
                 </div>
@@ -108,10 +108,10 @@ export default function App() {
               front={
                 <div
                   className="h-full rounded-2xl p-6 flex flex-col gap-3 items-center justify-center"
-                  style={{ backgroundColor: '#fff5e6', border: '2px dashed #e08246' }}
+                  style={{ backgroundColor: '#fdf8ef', border: '1.5px dashed #d97b4660' }}
                 >
-                  <span className="font-hand text-6xl font-bold" style={{ color: '#e08246' }}>?</span>
-                  <p className="font-hand text-xl text-center" style={{ color: '#4a6b3a' }}>
+                  <span className="font-hand text-6xl font-bold" style={{ color: '#d97b46' }}>?</span>
+                  <p className="font-hand text-xl text-center" style={{ color: '#5c6b4a' }}>
                     Mis pasiones escondidas
                   </p>
                 </div>
@@ -127,9 +127,9 @@ export default function App() {
               front={
                 <div
                   className="h-full rounded-2xl p-6 flex flex-col gap-4"
-                  style={{ backgroundColor: '#fdf5e6', border: '2px solid #4a6b3a' }}
+                  style={{ backgroundColor: '#fdf8ef', border: '1.5px solid #8fba7440' }}
                 >
-                  <h3 className="font-hand text-3xl font-bold" style={{ color: '#0a0f0a' }}>
+                  <h3 className="font-hand text-3xl font-bold" style={{ color: '#2a271e' }}>
                     Arte &amp; Momentos
                   </h3>
                   <div className="grid grid-cols-3 gap-2 mt-auto">
@@ -155,12 +155,12 @@ export default function App() {
               front={
                 <div
                   className="h-full rounded-2xl p-6 flex flex-col gap-3 justify-center items-center"
-                  style={{ backgroundColor: '#fffbf0', border: '2px dashed #7da866' }}
+                  style={{ backgroundColor: '#fdf8ef', border: '1.5px dashed #d97b4660' }}
                 >
-                  <h3 className="font-hand text-3xl font-bold text-center" style={{ color: '#0a0f0a' }}>
+                  <h3 className="font-hand text-3xl font-bold text-center" style={{ color: '#2a271e' }}>
                     Cosas que amo
                   </h3>
-                  <p className="font-hand text-base text-center" style={{ color: '#e08246' }}>
+                  <p className="font-hand text-base text-center" style={{ color: '#d97b46' }}>
                     Toca y te cuento
                   </p>
                 </div>
@@ -173,8 +173,8 @@ export default function App() {
 
         {/* Hint */}
         {!isBSide && (
-          <p className="text-center text-xs text-white/20 mt-8 font-sans tracking-wide">
-            Presiona B SIDE para conocer el otro lado
+          <p className="text-center text-xs mt-8 font-sans tracking-wide" style={{ color: '#4a4539' }}>
+            Presiona B Side para conocer el otro lado
           </p>
         )}
       </main>

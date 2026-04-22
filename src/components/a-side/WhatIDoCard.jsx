@@ -1,31 +1,23 @@
-import { GraduationCap, Code2, Server } from 'lucide-react'
-
 const items = [
   {
-    icon: GraduationCap,
+    emoji: '🎓',
     title: 'Docencia',
-    desc: 'Robótica, programación con Scratch y Arduino, pensamiento computacional para todos los niveles.',
-    iconColor: '#7da866',
-    iconBg: '#7da86618',
-    iconBorder: '#7da86640',
+    desc: 'Rob&oacute;tica, programaci&oacute;n con Scratch y Arduino, pensamiento computacional en todos los niveles.',
+    accent: '#8fba74',
     delay: '0ms',
   },
   {
-    icon: Code2,
-    title: 'Desarrollo',
-    desc: 'Apps web con Next.js, React y Supabase. Del prototipo al deploy en producción.',
-    iconColor: '#e08246',
-    iconBg: '#e0824618',
-    iconBorder: '#e0824640',
+    emoji: '💻',
+    title: 'Desarrollo web',
+    desc: 'Apps con Next.js, React y Supabase. Del prototipo al deploy, pensando siempre en el usuario.',
+    accent: '#d97b46',
     delay: '60ms',
   },
   {
-    icon: Server,
-    title: 'Coordinación TIC',
-    desc: '86 Google Classrooms administradas. Soporte pedagógico-tecnológico institucional.',
-    iconColor: '#8b9aa8',
-    iconBg: '#8b9aa818',
-    iconBorder: '#8b9aa840',
+    emoji: '🏫',
+    title: 'Coordinaci&oacute;n TIC',
+    desc: '86 Google Classrooms administradas. Soporte pedag&oacute;gico-tecnol&oacute;gico de toda la instituci&oacute;n.',
+    accent: '#a89b84',
     delay: '120ms',
   },
 ]
@@ -33,28 +25,30 @@ const items = [
 export default function WhatIDoCard() {
   return (
     <div
-      className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-5 animate-fade-in-up col-span-3"
-      style={{ animationDelay: '160ms' }}
+      className="bg-card rounded-2xl p-7 flex flex-col gap-6 animate-fade-in-up border border-border"
+      style={{ animationDelay: '150ms' }}
     >
-      <span className="font-heading font-bold text-white text-sm tracking-wide">
-        Lo Que Hago
-      </span>
+      <p className="font-sans text-xs uppercase tracking-widest text-muted">Lo que hago</p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {items.map(({ icon: Icon, title, desc, iconColor, iconBg, iconBorder, delay }) => (
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        {items.map(({ emoji, title, desc, accent, delay }) => (
           <div
             key={title}
-            className="card-glow flex flex-col gap-3 p-4 rounded-xl border border-border animate-fade-in-up"
+            className="flex flex-col gap-3 animate-fade-in-up"
             style={{ animationDelay: delay }}
           >
+            <span className="text-2xl" role="img" aria-label={title}>{emoji}</span>
+            <span className="font-heading text-lg text-warm leading-snug">{title}</span>
+            <p
+              className="font-sans text-sm leading-relaxed"
+              style={{ color: '#9e9588' }}
+              dangerouslySetInnerHTML={{ __html: desc }}
+            />
             <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center"
-              style={{ backgroundColor: iconBg, border: `1.5px solid ${iconBorder}` }}
-            >
-              <Icon size={17} style={{ color: iconColor }} />
-            </div>
-            <span className="font-heading font-bold text-white text-sm">{title}</span>
-            <p className="text-xs text-white/50 leading-relaxed font-sans">{desc}</p>
+              className="h-px mt-auto"
+              style={{ backgroundColor: `${accent}30` }}
+              aria-hidden="true"
+            />
           </div>
         ))}
       </div>
