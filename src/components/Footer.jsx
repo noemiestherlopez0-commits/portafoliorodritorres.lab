@@ -3,7 +3,7 @@ export default function Footer({ isBSide }) {
     <footer
       className="w-full py-5 flex flex-col sm:flex-row items-center justify-between gap-2 px-8 transition-colors duration-500"
       style={{
-        borderTop: isBSide ? '1.5px dashed #8fba7460' : '1px solid #2c2a1f',
+        borderTop: isBSide ? '1.5px dashed #a8d48a60' : '1px solid #3a5434',
         backgroundColor: 'transparent',
       }}
     >

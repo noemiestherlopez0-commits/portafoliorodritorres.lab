@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Caveat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Caveat:wght@400;600;700&display=swap');
 
 @layer base {
   :root {
-    --color-bg:       #13120e;
-    --color-card:     #1b1a14;
-    --color-border:   #2c2a1f;
-    --color-forest:   #8fba74;
-    --color-orange:   #d97b46;
-    --color-cream:    #fdf8ef;
-    --color-muted:    #7a7464;
+    --color-bg:     #2a3d27;
+    --color-card:   #1f2e1c;
+    --color-border: #3a5434;
+    --color-forest: #a8d48a;
+    --color-orange: #d97b46;
+    --color-cream:  #fdf8ef;
+    --color-muted:  #8baa7a;
   }
 
   html {
@@ -22,8 +22,8 @@
 
   body {
     background-color: var(--color-bg);
-    color: #e8e2d5;
-    font-family: 'Inter', sans-serif;
+    color: #e8f0e2;
+    font-family: 'Calibri', 'Gill Sans', 'Trebuchet MS', 'Segoe UI', sans-serif;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
   }
@@ -31,10 +31,11 @@
 
 @layer utilities {
   .card-hover {
-    transition: background-color 0.2s ease;
+    transition: background-color 0.25s ease, transform 0.25s ease;
   }
   .card-hover:hover {
-    background-color: #201f18;
+    background-color: #273823;
+    transform: translateY(-2px);
   }
 
   /* Flip card */

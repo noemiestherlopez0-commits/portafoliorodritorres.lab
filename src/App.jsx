@@ -88,12 +88,12 @@ export default function App() {
               front={
                 <div
                   className="h-full rounded-2xl p-6 flex flex-col gap-3"
-                  style={{ backgroundColor: '#fdf8ef', border: '1.5px solid #8fba7440' }}
+                  style={{ backgroundColor: '#fdf8ef', border: '1.5px solid #a8d48a50' }}
                 >
-                  <h2 className="font-hand text-4xl font-bold" style={{ color: '#2a271e' }}>
+                  <h2 className="font-hand text-4xl font-bold" style={{ color: '#1a2e18' }}>
                     Rodrigo Torres
                   </h2>
-                  <p className="font-hand text-xl" style={{ color: '#5c6b4a' }}>
+                  <p className="font-hand text-xl" style={{ color: '#4a6b3a' }}>
                     Profe · Dev · Ser humano
                   </p>
                   <p className="font-hand text-sm mt-auto flex items-center gap-1.5" style={{ color: '#d97b46' }}>
@@ -113,10 +113,10 @@ export default function App() {
               front={
                 <div
                   className="h-full rounded-2xl p-6 flex flex-col gap-3 items-center justify-center"
-                  style={{ backgroundColor: '#fdf8ef', border: '1.5px dashed #d97b4660' }}
+                  style={{ backgroundColor: '#fdf8ef', border: '1.5px dashed #d97b4670' }}
                 >
-                  <span className="font-hand text-6xl font-bold" style={{ color: '#d97b46' }}>?</span>
-                  <p className="font-hand text-xl text-center" style={{ color: '#5c6b4a' }}>
+                  <span className="font-hand text-6xl font-bold animate-float" style={{ color: '#d97b46' }}>?</span>
+                  <p className="font-hand text-xl text-center" style={{ color: '#4a6b3a' }}>
                     Mis pasiones escondidas
                   </p>
                 </div>
@@ -132,9 +132,9 @@ export default function App() {
               front={
                 <div
                   className="h-full rounded-2xl p-6 flex flex-col gap-4"
-                  style={{ backgroundColor: '#fdf8ef', border: '1.5px solid #8fba7440' }}
+                  style={{ backgroundColor: '#fdf8ef', border: '1.5px solid #a8d48a50' }}
                 >
-                  <h3 className="font-hand text-3xl font-bold" style={{ color: '#2a271e' }}>
+                  <h3 className="font-hand text-3xl font-bold" style={{ color: '#1a2e18' }}>
                     Arte &amp; Momentos
                   </h3>
                   <div className="grid grid-cols-3 gap-2 mt-auto">
@@ -160,9 +160,9 @@ export default function App() {
               front={
                 <div
                   className="h-full rounded-2xl p-6 flex flex-col gap-3 justify-center items-center"
-                  style={{ backgroundColor: '#fdf8ef', border: '1.5px dashed #d97b4660' }}
+                  style={{ backgroundColor: '#fdf8ef', border: '1.5px dashed #d97b4670' }}
                 >
-                  <h3 className="font-hand text-3xl font-bold text-center" style={{ color: '#2a271e' }}>
+                  <h3 className="font-hand text-3xl font-bold text-center" style={{ color: '#1a2e18' }}>
                     Cosas que amo
                   </h3>
                   <p className="font-hand text-base text-center" style={{ color: '#d97b46' }}>

@@ -8,14 +8,14 @@ export default function SideToggleButton({ isBSide, onToggle }) {
       style={
         isBSide
           ? {
-              backgroundColor: '#1b1a14',
-              color: '#8fba74',
-              border: '1.5px solid #2c2a1f',
+              backgroundColor: '#1f2e1c',
+              color: '#a8d48a',
+              border: '1.5px solid #3a5434',
             }
           : {
-              backgroundColor: '#8fba74',
-              color: '#13120e',
-              border: '1.5px solid #8fba74',
+              backgroundColor: '#a8d48a',
+              color: '#1f2e1c',
+              border: '1.5px solid #a8d48a',
             }
       }
       aria-label={isBSide ? 'Ver lado profesional (A Side)' : 'Ver lado personal (B Side)'}

@@ -6,15 +6,17 @@ const projects = [
     desc: 'Sistema completo con login por PIN, boletines, autosave. 5 cursos, 2 cuatrimestres.',
     tech: ['Next.js', 'Supabase'],
     status: 'En producción',
-    statusColor: '#8fba74',
+    statusColor: '#a8d48a',
+    delay: '0ms',
     href: null,
   },
   {
     name: 'El Colectivo',
     desc: 'PWA gamificada con temática de colectivo porteño. React + Vite + Canvas + Tailwind.',
-    tech: ['React', 'Vite', 'Canvas', 'Tailwind'],
+    tech: ['React', 'Vite', 'Canvas'],
     status: 'Prototipo',
-    statusColor: '#a89b84',
+    statusColor: '#c4a96a',
+    delay: '70ms',
     href: null,
   },
   {
@@ -22,7 +24,8 @@ const projects = [
     desc: 'Sistema de gestión para salón de eventos. React + Supabase. En producción.',
     tech: ['React', 'Supabase'],
     status: 'En producción',
-    statusColor: '#8fba74',
+    statusColor: '#a8d48a',
+    delay: '140ms',
     href: null,
   },
   {
@@ -30,7 +33,8 @@ const projects = [
     desc: 'Arquitectura y administración completa de Google Classroom institucional desde cero.',
     tech: ['Google Workspace'],
     status: 'Activo',
-    statusColor: '#8fba74',
+    statusColor: '#a8d48a',
+    delay: '210ms',
     href: null,
   },
 ]
@@ -38,8 +42,8 @@ const projects = [
 export default function ProjectsCard() {
   return (
     <div
-      className="bg-card rounded-2xl p-7 flex flex-col gap-6 animate-fade-in-up border border-border"
-      style={{ animationDelay: '230ms' }}
+      className="bg-card rounded-2xl p-7 flex flex-col gap-6 border border-border animate-fade-in-up"
+      style={{ animationDelay: '220ms' }}
     >
       <p className="font-sans text-xs uppercase tracking-widest text-muted">Proyectos</p>
 
@@ -47,11 +51,12 @@ export default function ProjectsCard() {
         {projects.map((p) => (
           <div
             key={p.name}
-            className="card-hover group relative flex flex-col gap-3 p-4 rounded-xl border border-border cursor-default"
+            className="group relative flex flex-col gap-3 p-4 rounded-xl border border-border cursor-default animate-scale-in transition-all duration-250 hover:-translate-y-1 hover:border-forest hover:bg-[#273823]"
+            style={{ animationDelay: p.delay }}
           >
             <div className="flex items-center gap-1.5">
               <span
-                className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                className="w-1.5 h-1.5 rounded-full flex-shrink-0 animate-pulse-dot"
                 style={{ backgroundColor: p.statusColor }}
                 aria-hidden="true"
               />
@@ -86,10 +91,7 @@ export default function ProjectsCard() {
                 <ArrowUpRight size={15} />
               </a>
             ) : (
-              <span
-                className="absolute top-3 right-3 opacity-0 group-hover:opacity-40 transition-opacity text-muted"
-                aria-hidden="true"
-              >
+              <span className="absolute top-3 right-3 opacity-0 group-hover:opacity-40 transition-opacity text-muted" aria-hidden="true">
                 <ArrowUpRight size={15} />
               </span>
             )}
