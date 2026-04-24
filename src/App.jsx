@@ -6,6 +6,7 @@ import WorkCard from './components/a-side/WorkCard'
 import WhatIDoCard from './components/a-side/WhatIDoCard'
 import ProjectsCard from './components/a-side/ProjectsCard'
 import StackCard from './components/a-side/StackCard'
+import DisponibleCard from './components/a-side/DisponibleCard'
 
 // B Side
 import PersonalCard from './components/b-side/PersonalCard'
@@ -69,6 +70,9 @@ export default function App() {
             {/* Row 4: Stack — full width */}
             <StackCard />
 
+            {/* Row 5: Disponible para — full width */}
+            <DisponibleCard />
+
           </div>
         )}
 
@@ -92,8 +96,9 @@ export default function App() {
                   <p className="font-hand text-xl" style={{ color: '#5c6b4a' }}>
                     Profe · Dev · Ser humano
                   </p>
-                  <p className="font-hand text-sm mt-auto" style={{ color: '#d97b46' }}>
-                    Toca para saber m&aacute;s...
+                  <p className="font-hand text-sm mt-auto flex items-center gap-1.5" style={{ color: '#d97b46' }}>
+                    <span style={{ display: 'inline-block', animation: 'bounce 1.4s infinite' }} aria-hidden="true">👆</span>
+                    Toca para saber m&aacute;s
                   </p>
                 </div>
               }
@@ -174,7 +179,7 @@ export default function App() {
         {/* Hint */}
         {!isBSide && (
           <p className="text-center text-xs mt-8 font-sans tracking-wide" style={{ color: '#4a4539' }}>
-            Presiona B Side para conocer el otro lado
+            Gir&aacute; la tarjeta para conocer al humano detr&aacute;s del dev →
           </p>
         )}
       </main>

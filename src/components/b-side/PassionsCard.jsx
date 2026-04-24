@@ -2,8 +2,11 @@ const passions = [
   { label: 'Piano', color: '#e08246' },
   { label: 'Guitarra', color: '#7da866' },
   { label: 'Canto', color: '#e08246' },
-  { label: 'Futbol', color: '#7da866' },
+  { label: 'Fútbol', color: '#7da866' },
   { label: 'Ajedrez', color: '#e08246' },
+  { label: 'Marvel', color: '#7da866' },
+  { label: 'Parques temáticos', color: '#e08246' },
+  { label: 'Música', color: '#7da866' },
 ]
 
 export default function PassionsCard() {
@@ -17,10 +20,7 @@ export default function PassionsCard() {
         animation: 'wobble 10s ease-in-out infinite reverse',
       }}
     >
-      <h2
-        className="font-hand text-3xl font-bold"
-        style={{ color: '#0c120c' }}
-      >
+      <h2 className="font-hand text-3xl font-bold" style={{ color: '#0c120c' }}>
         Pasiones
       </h2>
 

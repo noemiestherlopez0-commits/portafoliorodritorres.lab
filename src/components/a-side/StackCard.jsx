@@ -1,13 +1,18 @@
 const groups = [
   {
     label: 'Desarrollo',
-    items: ['Next.js', 'React', 'Tailwind CSS', 'Supabase', 'Vercel', 'GitHub'],
+    items: ['Next.js', 'React', 'Tailwind CSS', 'Supabase', 'Drizzle ORM', 'TypeScript', 'Vercel', 'GitHub', 'v0.dev'],
     accent: '#8fba74',
   },
   {
     label: 'Educación',
-    items: ['Google Workspace', 'Arduino', 'Scratch'],
+    items: ['Google Workspace', 'Arduino', 'ZUM Core 2.0', 'Scratch', 'Rasti', 'Potrero Digital'],
     accent: '#d97b46',
+  },
+  {
+    label: 'IA & Productividad',
+    items: ['Claude AI', 'Cursor', 'Vercel AI SDK'],
+    accent: '#a89b84',
   },
 ]
 
@@ -22,10 +27,7 @@ export default function StackCard() {
       <div className="flex flex-col gap-5">
         {groups.map(({ label, items, accent }) => (
           <div key={label} className="flex flex-col gap-3">
-            <span
-              className="font-sans text-xs font-semibold"
-              style={{ color: accent }}
-            >
+            <span className="font-sans text-xs font-semibold" style={{ color: accent }}>
               {label}
             </span>
             <div className="flex flex-wrap gap-2">

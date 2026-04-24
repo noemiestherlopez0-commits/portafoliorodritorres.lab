@@ -3,34 +3,34 @@ import { ArrowUpRight } from 'lucide-react'
 const projects = [
   {
     name: 'Gestión de Notas ICES',
-    desc: 'Sistema de calificaciones para instituciones educativas.',
+    desc: 'Sistema completo con login por PIN, boletines, autosave. 5 cursos, 2 cuatrimestres.',
     tech: ['Next.js', 'Supabase'],
     status: 'En producción',
     statusColor: '#8fba74',
     href: null,
   },
   {
-    name: 'ERP Jazmines',
-    desc: 'Gestión interna para organización comunitaria.',
-    tech: ['React', 'Supabase'],
-    status: 'En desarrollo',
-    statusColor: '#d97b46',
+    name: 'El Colectivo',
+    desc: 'PWA gamificada con temática de colectivo porteño. React + Vite + Canvas + Tailwind.',
+    tech: ['React', 'Vite', 'Canvas', 'Tailwind'],
+    status: 'Prototipo',
+    statusColor: '#a89b84',
     href: null,
   },
   {
-    name: 'Classroom ×86',
-    desc: '86 aulas virtuales activas, administradas desde cero.',
-    tech: ['Google Workspace'],
-    status: 'Activo',
+    name: 'ERP Los Jazmines',
+    desc: 'Sistema de gestión para salón de eventos. React + Supabase. En producción.',
+    tech: ['React', 'Supabase'],
+    status: 'En producción',
     statusColor: '#8fba74',
     href: null,
   },
   {
-    name: 'El Colectivo',
-    desc: 'Plataforma colaborativa de proyectos escolares.',
-    tech: ['React', 'Vite', 'Canvas'],
-    status: 'Prototipo',
-    statusColor: '#a89b84',
+    name: 'Classroom ×86',
+    desc: 'Arquitectura y administración completa de Google Classroom institucional desde cero.',
+    tech: ['Google Workspace'],
+    status: 'Activo',
+    statusColor: '#8fba74',
     href: null,
   },
 ]
@@ -49,7 +49,6 @@ export default function ProjectsCard() {
             key={p.name}
             className="card-hover group relative flex flex-col gap-3 p-4 rounded-xl border border-border cursor-default"
           >
-            {/* Status */}
             <div className="flex items-center gap-1.5">
               <span
                 className="w-1.5 h-1.5 rounded-full flex-shrink-0"
@@ -61,13 +60,10 @@ export default function ProjectsCard() {
               </span>
             </div>
 
-            {/* Name */}
             <span className="font-heading text-base text-warm leading-snug">{p.name}</span>
 
-            {/* Description */}
             <p className="font-sans text-xs leading-relaxed text-muted">{p.desc}</p>
 
-            {/* Tech */}
             <div className="flex flex-wrap gap-1.5 mt-auto">
               {p.tech.map((t) => (
                 <span
@@ -79,7 +75,6 @@ export default function ProjectsCard() {
               ))}
             </div>
 
-            {/* Arrow */}
             {p.href ? (
               <a
                 href={p.href}

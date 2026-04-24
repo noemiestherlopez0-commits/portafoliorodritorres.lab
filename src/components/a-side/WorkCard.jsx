@@ -1,21 +1,38 @@
 const jobs = [
   {
-    org: 'Instituto Cristiano Vicente López',
-    abbrev: 'ICVL',
+    org: 'ICES',
+    full: 'Instituto Cultural y Educativo del Sur',
+    roles: ['Director TIC', 'Dev'],
+    accent: '#8fba74',
+    note: 'Sistema de notas propio — Next.js + Supabase',
+  },
+  {
+    org: 'ICVL',
+    full: 'Instituto Cristiano Vicente López',
     roles: ['Líder TIC', 'Docente'],
     accent: '#8fba74',
+    note: null,
   },
   {
-    org: 'Colegio Jesús en el Huerto',
-    abbrev: 'CJH',
+    org: 'CJH',
+    full: 'Colegio Jesús en el Huerto',
     roles: ['Docente Informática'],
     accent: '#d97b46',
+    note: null,
   },
   {
-    org: 'Espacio Cultural Despacio',
-    abbrev: 'ECD',
+    org: 'PD',
+    full: 'Potrero Digital',
+    roles: ['Tutor'],
+    accent: '#d97b46',
+    note: 'Capacitación docente TIC',
+  },
+  {
+    org: 'ECD',
+    full: 'Espacio Cultural Despacio',
     roles: ['Taller Robótica'],
     accent: '#8fba74',
+    note: null,
   },
 ]
 
@@ -25,13 +42,11 @@ export default function WorkCard() {
       className="bg-card rounded-2xl p-7 flex flex-col gap-5 animate-fade-in-up border border-border"
       style={{ animationDelay: '70ms' }}
     >
-      {/* Section label */}
       <p className="font-sans text-xs uppercase tracking-widest text-muted">
         D&oacute;nde trabajo
       </p>
 
-      {/* Jobs */}
-      <ul className="flex flex-col gap-4">
+      <ul className="flex flex-col gap-3">
         {jobs.map((job) => (
           <li key={job.org} className="flex items-start gap-3">
             <div
@@ -43,10 +58,10 @@ export default function WorkCard() {
               }}
               aria-hidden="true"
             >
-              {job.abbrev.slice(0, 2)}
+              {job.org.slice(0, 2)}
             </div>
             <div className="flex flex-col gap-1 min-w-0">
-              <span className="text-sm font-sans text-warm leading-snug">{job.org}</span>
+              <span className="text-xs font-sans text-warm leading-snug">{job.full}</span>
               <div className="flex gap-1.5 flex-wrap">
                 {job.roles.map((r) => (
                   <span
@@ -58,15 +73,18 @@ export default function WorkCard() {
                   </span>
                 ))}
               </div>
+              {job.note && (
+                <span className="text-xs font-sans" style={{ color: '#5a5245' }}>
+                  {job.note}
+                </span>
+              )}
             </div>
           </li>
         ))}
       </ul>
 
-      {/* Divider */}
       <div className="border-t border-border" />
 
-      {/* Education */}
       <p className="font-sans text-xs uppercase tracking-widest text-muted">Formaci&oacute;n</p>
 
       <div className="flex items-start gap-3">
@@ -78,7 +96,7 @@ export default function WorkCard() {
           CO
         </div>
         <div className="flex flex-col gap-1">
-          <span className="text-sm font-sans text-warm leading-snug">
+          <span className="text-xs font-sans text-warm leading-snug">
             Prof. de Inform&aacute;tica — CONSUDEC V-5
           </span>
           <span className="text-xs font-sans text-forest">2do a&ntilde;o en curso</span>
