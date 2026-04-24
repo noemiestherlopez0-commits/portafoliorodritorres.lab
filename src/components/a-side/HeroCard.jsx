@@ -2,37 +2,33 @@ import { Instagram, Linkedin, Github, MapPin } from 'lucide-react'
 
 export default function HeroCard() {
   return (
-    <div
-      className="bg-card rounded-2xl p-7 flex flex-col gap-6 border border-border animate-slide-in-left"
-      style={{ animationDelay: '0ms' }}
-    >
-      {/* Top: name block + animated blob avatar */}
+    <div className="bg-card rounded-2xl p-7 flex flex-col gap-6 border border-border shadow-sm card-hover animate-slide-in-left">
+
       <div className="flex items-start justify-between gap-4">
         <div className="flex flex-col gap-2">
-          <h1 className="font-heading text-4xl text-warm leading-tight animate-fade-in-down" style={{ animationDelay: '80ms' }}>
+          <h1 className="font-heading text-4xl text-warm leading-tight">
             Rodrigo Torres
           </h1>
-          <p className="font-sans text-sm text-muted leading-snug animate-fade-in-up" style={{ animationDelay: '160ms' }}>
+          <p className="font-sans text-sm text-muted leading-snug">
             Docente · Dev Fullstack · Coordinador TIC
           </p>
-          <p className="font-sans text-sm leading-snug animate-fade-in-up" style={{ color: '#a8d48a', animationDelay: '220ms' }}>
+          <p className="font-sans text-sm leading-snug" style={{ color: '#4a8c3f' }}>
             Construyo tecnolog&iacute;a educativa que funciona en el aula real.
           </p>
-          <span className="flex items-center gap-1.5 text-xs text-muted mt-1 animate-fade-in-up" style={{ animationDelay: '280ms' }}>
-            <MapPin size={11} className="text-forest" />
+          <span className="flex items-center gap-1.5 text-xs text-muted mt-1">
+            <MapPin size={11} className="text-forest animate-breathe" />
             Vicente L&oacute;pez, Buenos Aires
           </span>
         </div>
 
-        {/* Animated blob avatar */}
+        {/* Animated blob avatar — float + wobble always running */}
         <div
-          className="w-20 h-20 flex-shrink-0 flex items-center justify-center font-heading text-xl select-none animate-float"
+          className="w-20 h-20 flex-shrink-0 flex items-center justify-center font-heading text-xl select-none"
           style={{
-            background: 'linear-gradient(135deg, #a8d48a 0%, #d97b46 100%)',
+            background: 'linear-gradient(135deg, #7cc96a 0%, #c96b2e 100%)',
             borderRadius: '60% 40% 55% 45% / 50% 60% 40% 50%',
-            animation: 'wobble 8s ease-in-out infinite, float 4s ease-in-out infinite',
-            color: '#1f2e1c',
-            fontSize: '1.2rem',
+            animation: 'wobble 8s ease-in-out infinite, float 3.6s ease-in-out infinite',
+            color: '#ffffff',
             fontWeight: 700,
           }}
           aria-label="Iniciales RT"
@@ -41,10 +37,13 @@ export default function HeroCard() {
         </div>
       </div>
 
-      {/* Availability + social */}
-      <div className="flex items-center justify-between flex-wrap gap-3 mt-auto animate-fade-in-up" style={{ animationDelay: '340ms' }}>
+      <div className="flex items-center justify-between flex-wrap gap-3 mt-auto">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full flex-shrink-0 animate-pulse-dot" style={{ backgroundColor: '#a8d48a' }} aria-hidden="true" />
+          <span
+            className="w-2 h-2 rounded-full flex-shrink-0 animate-pulse-dot"
+            style={{ backgroundColor: '#4a8c3f' }}
+            aria-hidden="true"
+          />
           <span className="text-xs text-muted">Abierto a oportunidades remotas</span>
         </div>
 
@@ -59,7 +58,7 @@ export default function HeroCard() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-muted border border-border hover:text-warm hover:border-forest transition-all duration-200 hover:scale-105"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-muted border border-border hover:text-warm hover:border-forest hover:shadow-sm transition-all duration-200 hover:scale-105"
               aria-label={`${label} de Rodrigo Torres`}
             >
               {icon}

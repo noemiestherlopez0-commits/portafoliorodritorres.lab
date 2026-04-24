@@ -7,14 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg:      '#2a3d27',
-        card:    '#1f2e1c',
-        border:  '#3a5434',
-        forest:  '#a8d48a',
-        orange:  '#d97b46',
+        bg:      '#f2f7f0',
+        card:    '#ffffff',
+        border:  '#d4e8cc',
+        forest:  '#4a8c3f',
+        orange:  '#c96b2e',
         cream:   '#fdf8ef',
-        muted:   '#8baa7a',
-        warm:    '#e8f0e2',
+        muted:   '#6b8560',
+        warm:    '#1c2b1a',
       },
       fontFamily: {
         sans:    ['Calibri', 'Gill Sans', 'Trebuchet MS', 'Segoe UI', 'sans-serif'],
@@ -22,29 +22,19 @@ export default {
         hand:    ['Caveat', 'cursive'],
       },
       keyframes: {
-        'fade-in-up': {
-          '0%':   { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        'fade-in-down': {
-          '0%':   { opacity: '0', transform: 'translateY(-20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        'slide-in-left': {
-          '0%':   { opacity: '0', transform: 'translateX(-28px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
-        },
-        'slide-in-right': {
-          '0%':   { opacity: '0', transform: 'translateX(28px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
-        },
-        'scale-in': {
-          '0%':   { opacity: '0', transform: 'scale(0.92)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
-        },
-        'float': {
+        /* --- continuous loop animations --- */
+        float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%':      { transform: 'translateY(-6px)' },
+          '50%':      { transform: 'translateY(-7px)' },
+        },
+        sway: {
+          '0%, 100%': { transform: 'translateX(0px) rotate(0deg)' },
+          '33%':      { transform: 'translateX(3px) rotate(0.5deg)' },
+          '66%':      { transform: 'translateX(-3px) rotate(-0.5deg)' },
+        },
+        breathe: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%':      { transform: 'scale(1.04)', opacity: '0.85' },
         },
         wobble: {
           '0%, 100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
@@ -52,27 +42,49 @@ export default {
         },
         'pulse-dot': {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
-          '50%':      { opacity: '0.5', transform: 'scale(1.4)' },
+          '50%':      { opacity: '0.4', transform: 'scale(1.5)' },
         },
-        shimmer: {
-          '0%':   { backgroundPosition: '-200% center' },
-          '100%': { backgroundPosition: '200% center' },
+        'badge-shift': {
+          '0%, 100%': { opacity: '1' },
+          '50%':      { opacity: '0.65' },
         },
-        bounce: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%':      { transform: 'translateY(-5px)' },
+        drift: {
+          '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
+          '25%':      { transform: 'translate(2px, -3px) rotate(0.3deg)' },
+          '75%':      { transform: 'translate(-2px, 2px) rotate(-0.3deg)' },
+        },
+        'slide-in-left': {
+          '0%':   { opacity: '0', transform: 'translateX(-24px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'slide-in-right': {
+          '0%':   { opacity: '0', transform: 'translateX(24px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'fade-in-up': {
+          '0%':   { opacity: '0', transform: 'translateY(16px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'scale-in': {
+          '0%':   { opacity: '0', transform: 'scale(0.93)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
         },
       },
       animation: {
-        'fade-in-up':    'fade-in-up 0.55s ease both',
-        'fade-in-down':  'fade-in-down 0.55s ease both',
-        'slide-in-left': 'slide-in-left 0.55s ease both',
-        'slide-in-right':'slide-in-right 0.55s ease both',
-        'scale-in':      'scale-in 0.5s ease both',
-        float:           'float 4s ease-in-out infinite',
-        wobble:          'wobble 8s ease-in-out infinite',
-        'pulse-dot':     'pulse-dot 2s ease-in-out infinite',
-        bounce:          'bounce 1.4s ease-in-out infinite',
+        /* one-shot entrance (used on load) */
+        'slide-in-left':  'slide-in-left 0.55s ease both',
+        'slide-in-right': 'slide-in-right 0.55s ease both',
+        'fade-in-up':     'fade-in-up 0.55s ease both',
+        'scale-in':       'scale-in 0.5s ease both',
+
+        /* infinite loops — always running */
+        float:        'float 3.6s ease-in-out infinite',
+        sway:         'sway 5s ease-in-out infinite',
+        breathe:      'breathe 4s ease-in-out infinite',
+        wobble:       'wobble 8s ease-in-out infinite',
+        'pulse-dot':  'pulse-dot 2s ease-in-out infinite',
+        'badge-shift':'badge-shift 3s ease-in-out infinite',
+        drift:        'drift 6s ease-in-out infinite',
       },
     },
   },
