@@ -43,7 +43,7 @@ export default function App() {
     <div className="min-h-screen flex flex-col bg-bg transition-colors duration-700">
 
       {/* Main content */}
-      <main className="flex-1 w-full max-w-5xl mx-auto px-4 pt-10 pb-28" style={{ borderColor: '#3ec155' }}>
+      <main className="flex-1 w-full max-w-5xl mx-auto px-4 pt-10 pb-28">
 
         {/* ── A SIDE: bento grid ── */}
         {!isBSide && (
