@@ -7,18 +7,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg:      '#dff0d8',
-        card:    '#ffffff',
-        border:  '#c3ddb8',
-        forest:  '#3d9e50',
-        orange:  '#e07b45',
-        cream:   '#fdf8ef',
-        muted:   '#5a7a5c',
-        warm:    '#253226',
+        bg:      '#1a2e1c',
+        card:    '#243527',
+        border:  '#2e4a31',
+        forest:  '#5ec46a',
+        orange:  '#e8894e',
+        cream:   '#1e3523',
+        muted:   '#8aab8c',
+        warm:    '#e8f2e8',
       },
       fontFamily: {
-        sans:    ['"Plus Jakarta Sans"', '"Segoe UI"', 'system-ui', 'sans-serif'],
-        heading: ['Lora', 'Georgia', 'serif'],
+        sans:    ['Nunito', '"Segoe UI"', 'system-ui', 'sans-serif'],
+        heading: ['Nunito', '"Segoe UI"', 'system-ui', 'sans-serif'],
         hand:    ['Caveat', 'cursive'],
       },
       keyframes: {
@@ -42,10 +42,6 @@ export default {
         'pulse-dot': {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
           '50%':      { opacity: '0.4', transform: 'scale(1.5)' },
-        },
-        'badge-shift': {
-          '0%, 100%': { opacity: '1' },
-          '50%':      { opacity: '0.65' },
         },
         drift: {
           '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
@@ -79,7 +75,6 @@ export default {
         breathe:      'breathe 4s ease-in-out infinite',
         wobble:       'wobble 8s ease-in-out infinite',
         'pulse-dot':  'pulse-dot 2s ease-in-out infinite',
-        'badge-shift':'badge-shift 3s ease-in-out infinite',
         drift:        'drift 6s ease-in-out infinite',
       },
     },

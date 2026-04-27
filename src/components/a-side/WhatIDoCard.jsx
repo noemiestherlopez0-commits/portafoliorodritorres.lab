@@ -4,7 +4,7 @@ const items = [
     title: 'Docencia',
     desc: 'Robótica, programación con Scratch y Arduino, pensamiento computacional en todos los niveles.',
     detail: 'Arduino, ZUM Core 2.0, Rasti, Scratch — robótica desde primaria hasta secundaria.',
-    accent: '#3d9e50',
+    accent: '#5ec46a',
     delay: '0ms',
   },
   {
@@ -12,7 +12,7 @@ const items = [
     title: 'Desarrollo web',
     desc: 'Apps con Next.js, React y Supabase. Del prototipo al deploy, pensando siempre en el usuario.',
     detail: 'Drizzle ORM, v0.dev, Claude AI — prototipo a producción en días.',
-    accent: '#e07b45',
+    accent: '#e8894e',
     delay: '80ms',
   },
   {
@@ -20,7 +20,7 @@ const items = [
     title: 'Coordinación TIC',
     desc: 'Soporte pedagógico-tecnológico de toda la institución.',
     detail: 'Google Workspace for Education · 86 aulas activas · soporte institucional completo.',
-    accent: '#3d9e50',
+    accent: '#5ec46a',
     delay: '160ms',
   },
 ]
@@ -31,7 +31,7 @@ export default function WhatIDoCard() {
       className="bg-card rounded-2xl p-7 flex flex-col gap-6 border border-border animate-fade-in-up"
       style={{ animationDelay: '140ms' }}
     >
-      <p className="font-sans text-xs uppercase tracking-widest text-muted">Lo que hago</p>
+      <p className="font-sans text-xs uppercase tracking-widest text-muted font-bold">Lo que hago</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
         {items.map(({ emoji, title, desc, detail, accent, delay }) => (
@@ -47,21 +47,21 @@ export default function WhatIDoCard() {
             >
               {emoji}
             </span>
-            <span className="font-heading text-lg text-warm leading-snug">
+            <span className="font-heading text-lg font-extrabold text-warm leading-snug">
               {title}
             </span>
             <p className="font-sans text-sm leading-relaxed text-muted">
               {desc}
             </p>
             <p
-              className="font-sans text-xs leading-relaxed mt-1 font-medium"
+              className="font-sans text-xs leading-relaxed mt-1 font-bold"
               style={{ color: accent }}
             >
               {detail}
             </p>
             <div
               className="h-px mt-auto"
-              style={{ backgroundColor: `${accent}30` }}
+              style={{ backgroundColor: `${accent}35` }}
               aria-hidden="true"
             />
           </div>

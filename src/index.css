@@ -2,18 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Caveat:wght@400;600;700&display=swap');
-
 @layer base {
   :root {
-    --color-bg:     #dff0d8;
-    --color-card:   #ffffff;
-    --color-border: #c3ddb8;
-    --color-forest: #3d9e50;
-    --color-orange: #e07b45;
-    --color-cream:  #fdf8ef;
-    --color-muted:  #5a7a5c;
-    --color-text:   #253226;
+    --color-bg:     #1a2e1c;
+    --color-card:   #243527;
+    --color-border: #2e4a31;
+    --color-forest: #5ec46a;
+    --color-orange: #e8894e;
+    --color-cream:  #1e3523;
+    --color-muted:  #8aab8c;
+    --color-text:   #e8f2e8;
   }
 
   html {
@@ -24,7 +22,7 @@
   body {
     background-color: var(--color-bg);
     color: var(--color-text);
-    font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
   }
@@ -35,7 +33,7 @@
     transition: box-shadow 0.28s ease, transform 0.28s ease;
   }
   .card-hover:hover {
-    box-shadow: 0 8px 28px 0 rgba(61,158,80,0.13);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.35);
     transform: translateY(-3px);
   }
 

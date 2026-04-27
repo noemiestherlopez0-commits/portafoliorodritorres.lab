@@ -24,13 +24,12 @@ export default function DisponibleCard() {
     <div
       className="rounded-2xl p-7 flex flex-col gap-6 border animate-fade-in-up"
       style={{
-        backgroundColor: '#2d6e3a',
-        borderColor: '#3d9e5050',
-        borderStyle: 'solid',
+        backgroundColor: '#0f1f11',
+        borderColor: '#5ec46a40',
         animationDelay: '390ms',
       }}
     >
-      <p className="font-sans text-xs uppercase tracking-widest" style={{ color: '#a8dba8' }}>
+      <p className="font-sans text-xs uppercase tracking-widest font-bold" style={{ color: '#5ec46a' }}>
         Disponible para
       </p>
 
@@ -48,10 +47,10 @@ export default function DisponibleCard() {
             >
               {emoji}
             </span>
-            <span className="font-heading text-base leading-snug" style={{ color: '#e8f5e4' }}>
+            <span className="font-heading text-base font-extrabold leading-snug" style={{ color: '#e8f2e8' }}>
               {title}
             </span>
-            <p className="font-sans text-xs leading-relaxed" style={{ color: '#8ec98e' }}>
+            <p className="font-sans text-xs leading-relaxed" style={{ color: '#8aab8c' }}>
               {desc}
             </p>
           </div>
@@ -61,8 +60,8 @@ export default function DisponibleCard() {
       <div className="pt-1 animate-fade-in-up" style={{ animationDelay: '480ms' }}>
         <a
           href="mailto:rodrigo@rodritorres.lab"
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-sans text-sm font-semibold transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95"
-          style={{ backgroundColor: '#6ec97a', color: '#1a3d20' }}
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-sans text-sm font-extrabold transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95"
+          style={{ backgroundColor: '#5ec46a', color: '#0f1f11' }}
         >
           Escribime
           <span aria-hidden="true">&#8594;</span>

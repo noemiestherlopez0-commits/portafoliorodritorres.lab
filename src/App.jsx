@@ -88,15 +88,15 @@ export default function App() {
               front={
                 <div
                   className="h-full rounded-2xl p-6 flex flex-col gap-3"
-                  style={{ backgroundColor: '#fdf8ef', border: '1.5px solid #a8d48a50' }}
+                  style={{ backgroundColor: '#1e3220', border: '1.5px solid #2e4a31' }}
                 >
-                  <h2 className="font-hand text-4xl font-bold" style={{ color: '#1a2e18' }}>
+                  <h2 className="font-hand text-4xl font-bold" style={{ color: '#e8f2e8' }}>
                     Rodrigo Torres
                   </h2>
-                  <p className="font-hand text-xl" style={{ color: '#4a6b3a' }}>
+                  <p className="font-hand text-xl" style={{ color: '#8aab8c' }}>
                     Profe · Dev · Ser humano
                   </p>
-                  <p className="font-hand text-sm mt-auto flex items-center gap-1.5" style={{ color: '#d97b46' }}>
+                  <p className="font-hand text-sm mt-auto flex items-center gap-1.5" style={{ color: '#e8894e' }}>
                     <span style={{ display: 'inline-block', animation: 'bounce 1.4s infinite' }} aria-hidden="true">👆</span>
                     Toca para saber m&aacute;s
                   </p>
@@ -113,10 +113,10 @@ export default function App() {
               front={
                 <div
                   className="h-full rounded-2xl p-6 flex flex-col gap-3 items-center justify-center"
-                  style={{ backgroundColor: '#fdf8ef', border: '1.5px dashed #d97b4670' }}
+                  style={{ backgroundColor: '#1e3220', border: '1.5px dashed #5ec46a50' }}
                 >
-                  <span className="font-hand text-6xl font-bold animate-float" style={{ color: '#d97b46' }}>?</span>
-                  <p className="font-hand text-xl text-center" style={{ color: '#4a6b3a' }}>
+                  <span className="font-hand text-6xl font-bold animate-float" style={{ color: '#e8894e' }}>?</span>
+                  <p className="font-hand text-xl text-center" style={{ color: '#8aab8c' }}>
                     Mis pasiones escondidas
                   </p>
                 </div>
@@ -132,13 +132,13 @@ export default function App() {
               front={
                 <div
                   className="h-full rounded-2xl p-6 flex flex-col gap-4"
-                  style={{ backgroundColor: '#fdf8ef', border: '1.5px solid #a8d48a50' }}
+                  style={{ backgroundColor: '#1e3220', border: '1.5px solid #2e4a31' }}
                 >
-                  <h3 className="font-hand text-3xl font-bold" style={{ color: '#1a2e18' }}>
+                  <h3 className="font-hand text-3xl font-bold" style={{ color: '#e8f2e8' }}>
                     Arte &amp; Momentos
                   </h3>
                   <div className="grid grid-cols-3 gap-2 mt-auto">
-                    {['#7da866', '#e08246', '#4a6b3a'].map((c) => (
+                    {['#5ec46a', '#e8894e', '#2e4a31'].map((c) => (
                       <div
                         key={c}
                         className="aspect-square rounded-lg"
@@ -160,12 +160,12 @@ export default function App() {
               front={
                 <div
                   className="h-full rounded-2xl p-6 flex flex-col gap-3 justify-center items-center"
-                  style={{ backgroundColor: '#fdf8ef', border: '1.5px dashed #d97b4670' }}
+                  style={{ backgroundColor: '#1e3220', border: '1.5px dashed #5ec46a50' }}
                 >
-                  <h3 className="font-hand text-3xl font-bold text-center" style={{ color: '#1a2e18' }}>
+                  <h3 className="font-hand text-3xl font-bold text-center" style={{ color: '#e8f2e8' }}>
                     Cosas que amo
                   </h3>
-                  <p className="font-hand text-base text-center" style={{ color: '#d97b46' }}>
+                  <p className="font-hand text-base text-center" style={{ color: '#e8894e' }}>
                     Toca y te cuento
                   </p>
                 </div>
@@ -178,7 +178,7 @@ export default function App() {
 
         {/* Hint */}
         {!isBSide && (
-          <p className="text-center text-xs mt-8 font-sans tracking-wide" style={{ color: '#4a4539' }}>
+          <p className="text-center text-xs mt-8 font-sans tracking-wide font-semibold" style={{ color: '#8aab8c' }}>
             Gir&aacute; la tarjeta para conocer al humano detr&aacute;s del dev →
           </p>
         )}
