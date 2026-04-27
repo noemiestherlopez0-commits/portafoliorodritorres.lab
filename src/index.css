@@ -2,18 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Caveat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=Caveat:wght@400;600;700&display=swap');
 
 @layer base {
   :root {
-    --color-bg:     #3ec155;
+    --color-bg:     #dff0d8;
     --color-card:   #ffffff;
-    --color-border: #d4e8cc;
-    --color-forest: #4a8c3f;
-    --color-orange: #c96b2e;
+    --color-border: #c3ddb8;
+    --color-forest: #3d9e50;
+    --color-orange: #e07b45;
     --color-cream:  #fdf8ef;
-    --color-muted:  #6b8560;
-    --color-text:   #1c2b1a;
+    --color-muted:  #5a7a5c;
+    --color-text:   #253226;
   }
 
   html {
@@ -24,7 +24,7 @@
   body {
     background-color: var(--color-bg);
     color: var(--color-text);
-    font-family: 'Calibri', 'Gill Sans', 'Trebuchet MS', 'Segoe UI', sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
   }
@@ -35,7 +35,7 @@
     transition: box-shadow 0.28s ease, transform 0.28s ease;
   }
   .card-hover:hover {
-    box-shadow: 0 6px 24px 0 rgba(74,140,63,0.10);
+    box-shadow: 0 8px 28px 0 rgba(61,158,80,0.13);
     transform: translateY(-3px);
   }
 

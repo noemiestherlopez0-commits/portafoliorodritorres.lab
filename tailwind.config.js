@@ -7,22 +7,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg:      '#3ec155',
+        bg:      '#dff0d8',
         card:    '#ffffff',
-        border:  '#d4e8cc',
-        forest:  '#4a8c3f',
-        orange:  '#c96b2e',
+        border:  '#c3ddb8',
+        forest:  '#3d9e50',
+        orange:  '#e07b45',
         cream:   '#fdf8ef',
-        muted:   '#6b8560',
-        warm:    '#1c2b1a',
+        muted:   '#5a7a5c',
+        warm:    '#253226',
       },
       fontFamily: {
-        sans:    ['Calibri', 'Gill Sans', 'Trebuchet MS', 'Segoe UI', 'sans-serif'],
-        heading: ['"DM Serif Display"', 'Georgia', 'serif'],
+        sans:    ['"Plus Jakarta Sans"', '"Segoe UI"', 'system-ui', 'sans-serif'],
+        heading: ['Lora', 'Georgia', 'serif'],
         hand:    ['Caveat', 'cursive'],
       },
       keyframes: {
-        /* --- continuous loop animations --- */
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%':      { transform: 'translateY(-7px)' },
@@ -71,13 +70,10 @@ export default {
         },
       },
       animation: {
-        /* one-shot entrance (used on load) */
         'slide-in-left':  'slide-in-left 0.55s ease both',
         'slide-in-right': 'slide-in-right 0.55s ease both',
         'fade-in-up':     'fade-in-up 0.55s ease both',
         'scale-in':       'scale-in 0.5s ease both',
-
-        /* infinite loops — always running */
         float:        'float 3.6s ease-in-out infinite',
         sway:         'sway 5s ease-in-out infinite',
         breathe:      'breathe 4s ease-in-out infinite',

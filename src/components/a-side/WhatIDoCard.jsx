@@ -2,25 +2,25 @@ const items = [
   {
     emoji: '🎓',
     title: 'Docencia',
-    desc: 'Rob&oacute;tica, programaci&oacute;n con Scratch y Arduino, pensamiento computacional en todos los niveles.',
-    detail: 'Arduino, ZUM Core 2.0, Rasti, Scratch &mdash; rob&oacute;tica desde primaria hasta secundaria.',
-    accent: '#a8d48a',
+    desc: 'Robótica, programación con Scratch y Arduino, pensamiento computacional en todos los niveles.',
+    detail: 'Arduino, ZUM Core 2.0, Rasti, Scratch — robótica desde primaria hasta secundaria.',
+    accent: '#3d9e50',
     delay: '0ms',
   },
   {
     emoji: '💻',
     title: 'Desarrollo web',
     desc: 'Apps con Next.js, React y Supabase. Del prototipo al deploy, pensando siempre en el usuario.',
-    detail: 'Drizzle ORM, v0.dev, Claude AI &mdash; prototipo a producci&oacute;n en d&iacute;as.',
-    accent: '#d97b46',
+    detail: 'Drizzle ORM, v0.dev, Claude AI — prototipo a producción en días.',
+    accent: '#e07b45',
     delay: '80ms',
   },
   {
     emoji: '🏫',
-    title: 'Coordinaci&oacute;n TIC',
-    desc: 'Soporte pedag&oacute;gico-tecnol&oacute;gico de toda la instituci&oacute;n.',
-    detail: 'Google Workspace for Education &middot; 86 aulas activas &middot; soporte institucional completo.',
-    accent: '#9ab889',
+    title: 'Coordinación TIC',
+    desc: 'Soporte pedagógico-tecnológico de toda la institución.',
+    detail: 'Google Workspace for Education · 86 aulas activas · soporte institucional completo.',
+    accent: '#3d9e50',
     delay: '160ms',
   },
 ]
@@ -47,23 +47,21 @@ export default function WhatIDoCard() {
             >
               {emoji}
             </span>
-            <span
-              className="font-heading text-lg text-warm leading-snug"
-              dangerouslySetInnerHTML={{ __html: title }}
-            />
+            <span className="font-heading text-lg text-warm leading-snug">
+              {title}
+            </span>
+            <p className="font-sans text-sm leading-relaxed text-muted">
+              {desc}
+            </p>
             <p
-              className="font-sans text-sm leading-relaxed"
-              style={{ color: '#9ab88a' }}
-              dangerouslySetInnerHTML={{ __html: desc }}
-            />
-            <p
-              className="font-sans text-xs leading-relaxed mt-1"
-              style={{ color: accent, opacity: 0.9 }}
-              dangerouslySetInnerHTML={{ __html: detail }}
-            />
+              className="font-sans text-xs leading-relaxed mt-1 font-medium"
+              style={{ color: accent }}
+            >
+              {detail}
+            </p>
             <div
-              className="h-px mt-auto transition-all duration-300 group-hover:opacity-100"
-              style={{ backgroundColor: `${accent}40` }}
+              className="h-px mt-auto"
+              style={{ backgroundColor: `${accent}30` }}
               aria-hidden="true"
             />
           </div>

@@ -12,7 +12,7 @@ export default function HeroCard() {
           <p className="font-sans text-sm text-muted leading-snug">
             Docente · Dev Fullstack · Coordinador TIC
           </p>
-          <p className="font-sans text-sm leading-snug" style={{ color: '#4a8c3f' }}>
+          <p className="font-sans text-sm leading-snug"             style={{ color: '#3d9e50' }}>
             Construyo tecnolog&iacute;a educativa que funciona en el aula real.
           </p>
           <span className="flex items-center gap-1.5 text-xs text-muted mt-1">
@@ -25,7 +25,7 @@ export default function HeroCard() {
         <div
           className="w-20 h-20 flex-shrink-0 flex items-center justify-center font-heading text-xl select-none"
           style={{
-            background: 'linear-gradient(135deg, #7cc96a 0%, #c96b2e 100%)',
+            background: 'linear-gradient(135deg, #52c068 0%, #e07b45 100%)',
             borderRadius: '60% 40% 55% 45% / 50% 60% 40% 50%',
             animation: 'wobble 8s ease-in-out infinite, float 3.6s ease-in-out infinite',
             color: '#ffffff',
@@ -41,7 +41,7 @@ export default function HeroCard() {
         <div className="flex items-center gap-2">
           <span
             className="w-2 h-2 rounded-full flex-shrink-0 animate-pulse-dot"
-            style={{ backgroundColor: '#4a8c3f' }}
+            style={{ backgroundColor: '#3d9e50' }}
             aria-hidden="true"
           />
           <span className="text-xs text-muted">Abierto a oportunidades remotas</span>

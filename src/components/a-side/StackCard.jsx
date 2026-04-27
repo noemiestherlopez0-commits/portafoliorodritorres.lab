@@ -2,19 +2,19 @@ const groups = [
   {
     label: 'Desarrollo',
     items: ['Next.js', 'React', 'Tailwind CSS', 'Supabase', 'Drizzle ORM', 'TypeScript', 'Vercel', 'GitHub', 'v0.dev'],
-    accent: '#a8d48a',
+    accent: '#3d9e50',
     delay: '0ms',
   },
   {
     label: 'Educación',
     items: ['Google Workspace', 'Arduino', 'ZUM Core 2.0', 'Scratch', 'Rasti', 'Potrero Digital'],
-    accent: '#d97b46',
+    accent: '#e07b45',
     delay: '80ms',
   },
   {
     label: 'IA & Productividad',
     items: ['Claude AI', 'Cursor', 'Vercel AI SDK'],
-    accent: '#9ab889',
+    accent: '#3d9e50',
     delay: '160ms',
   },
 ]

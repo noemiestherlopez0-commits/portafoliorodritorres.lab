@@ -6,7 +6,7 @@ const projects = [
     desc: 'Sistema completo con login por PIN, boletines, autosave. 5 cursos, 2 cuatrimestres.',
     tech: ['Next.js', 'Supabase'],
     status: 'En producción',
-    statusColor: '#a8d48a',
+    statusColor: '#3d9e50',
     delay: '0ms',
     href: null,
   },
@@ -15,7 +15,7 @@ const projects = [
     desc: 'PWA gamificada con temática de colectivo porteño. React + Vite + Canvas + Tailwind.',
     tech: ['React', 'Vite', 'Canvas'],
     status: 'Prototipo',
-    statusColor: '#c4a96a',
+    statusColor: '#c4993a',
     delay: '70ms',
     href: null,
   },
@@ -24,7 +24,7 @@ const projects = [
     desc: 'Sistema de gestión para salón de eventos. React + Supabase. En producción.',
     tech: ['React', 'Supabase'],
     status: 'En producción',
-    statusColor: '#a8d48a',
+    statusColor: '#3d9e50',
     delay: '140ms',
     href: null,
   },
@@ -33,7 +33,7 @@ const projects = [
     desc: 'Arquitectura y administración completa de Google Classroom institucional desde cero.',
     tech: ['Google Workspace'],
     status: 'Activo',
-    statusColor: '#a8d48a',
+    statusColor: '#3d9e50',
     delay: '210ms',
     href: null,
   },
@@ -51,7 +51,7 @@ export default function ProjectsCard() {
         {projects.map((p) => (
           <div
             key={p.name}
-            className="group relative flex flex-col gap-3 p-4 rounded-xl border border-border cursor-default animate-scale-in transition-all duration-250 hover:-translate-y-1 hover:border-forest hover:bg-[#273823]"
+            className="group relative flex flex-col gap-3 p-4 rounded-xl border border-border cursor-default animate-scale-in transition-all duration-250 hover:-translate-y-1 hover:shadow-md"
             style={{ animationDelay: p.delay }}
           >
             <div className="flex items-center gap-1.5">
@@ -60,7 +60,7 @@ export default function ProjectsCard() {
                 style={{ backgroundColor: p.statusColor }}
                 aria-hidden="true"
               />
-              <span className="font-sans text-xs" style={{ color: p.statusColor }}>
+              <span className="font-sans text-xs font-medium" style={{ color: p.statusColor }}>
                 {p.status}
               </span>
             </div>
@@ -80,21 +80,9 @@ export default function ProjectsCard() {
               ))}
             </div>
 
-            {p.href ? (
-              <a
-                href={p.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-forest"
-                aria-label={`Ver ${p.name}`}
-              >
-                <ArrowUpRight size={15} />
-              </a>
-            ) : (
-              <span className="absolute top-3 right-3 opacity-0 group-hover:opacity-40 transition-opacity text-muted" aria-hidden="true">
-                <ArrowUpRight size={15} />
-              </span>
-            )}
+            <span className="absolute top-3 right-3 opacity-0 group-hover:opacity-40 transition-opacity text-muted" aria-hidden="true">
+              <ArrowUpRight size={15} />
+            </span>
           </div>
         ))}
       </div>
