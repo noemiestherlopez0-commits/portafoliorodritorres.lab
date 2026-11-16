@@ -425,7 +425,7 @@ a {
   display: flex;
   gap: 1rem;
   width: max-content;
-  animation: desfilar 28s linear infinite;
+  animation: desfilar 40s linear infinite;
 }
 .carrusel:hover .carrusel-pista {
   animation-play-state: paused;
@@ -446,6 +446,10 @@ a {
   width: auto;
   max-width: 11rem;
   object-fit: contain;
+}
+.carrusel-oscuro {
+  background: #000000;
+  border-color: var(--borde-fuerte);
 }
 @keyframes desfilar {
   to { transform: translateX(calc(-50% - 0.5rem)); }

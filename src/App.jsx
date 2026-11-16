@@ -116,7 +116,11 @@ function Carrusel() {
     <div className="carrusel">
       <ul className="carrusel-pista">
         {[...logos, ...logos].map((l, i) => (
-          <li key={i} className="carrusel-item" aria-hidden={i >= logos.length}>
+          <li
+            key={i}
+            className={`carrusel-item ${l.oscuro ? 'carrusel-oscuro' : ''}`}
+            aria-hidden={i >= logos.length}
+          >
             <img src={l.imagen} alt={i < logos.length ? l.nombre : ''} loading="lazy" />
           </li>
         ))}

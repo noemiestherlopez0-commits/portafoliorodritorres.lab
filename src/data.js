@@ -33,12 +33,16 @@ export const redes = [
 ]
 
 // Logos que pasan en el carrusel "Dónde trabajé" (las imágenes están en public/logos/)
+// oscuro: true → para logos con fondo negro
 export const logos = [
   { nombre: 'Instituto Cristiano Vicente López', imagen: '/logos/icvl.webp' },
   { nombre: 'Colegio Jesús en el Huerto de los Olivos', imagen: '/logos/huerto.webp' },
   { nombre: 'Potrero Digital · Picadito', imagen: '/logos/picadito.webp' },
   { nombre: 'Patronato de la Infancia', imagen: '/logos/patronato.webp' },
   { nombre: 'Espacio Cultural Despacio', imagen: '/logos/despacio.webp' },
+  { nombre: 'Robótica Martelli', imagen: '/logos/martelli.webp', oscuro: true },
+  { nombre: 'Potrero Digital', imagen: '/logos/potrero.webp', oscuro: true },
+  { nombre: 'Steigen Laboratorio Farmacéutico', imagen: '/logos/steigen.webp' },
 ]
 
 // periodo: escribí las fechas, por ejemplo '2023 — Actualidad'
