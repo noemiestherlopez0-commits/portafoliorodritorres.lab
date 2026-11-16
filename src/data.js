@@ -1,21 +1,25 @@
 // ─────────────────────────────────────────────────────────────
 //  TODA LA INFORMACIÓN DEL PORTAFOLIO ESTÁ ACÁ.
 //  Para cambiar un texto, editá solo este archivo.
-//  No hace falta tocar nada más.
+//  Si un campo queda vacío ('') no se muestra en la página.
 // ─────────────────────────────────────────────────────────────
 
 export const perfil = {
   nombre: 'Rodrigo Torres',
+  nombreCorto: 'Rodrigo',
   marca: 'rodritorres.lab',
-  roles: ['Docente', 'Dev Fullstack', 'Coordinador TIC'],
+  titulo: 'Docente · Dev Fullstack · Coordinador TIC',
   frase: 'Construyo tecnología educativa que funciona en el aula real.',
-  bajada:
-    'Enseño robótica y programación, coordino la tecnología de instituciones educativas y desarrollo sistemas a medida que hoy usan docentes, estudiantes y empresas.',
   ubicacion: 'Vicente López, Buenos Aires',
   estado: 'Abierto a oportunidades remotas',
 }
 
-// Números destacados que aparecen debajo del título principal
+export const sobreMi = [
+  'Soy docente de robótica y programación, coordinador TIC y desarrollador fullstack. Trabajo en el cruce entre la educación y el software: enseño en el aula, acompaño a otros docentes a usar la tecnología y construyo los sistemas que las instituciones necesitan para funcionar.',
+  'Desarrollo con Next.js, React y Supabase, y llevo las ideas del prototipo a producción. Hoy mis sistemas los usan docentes, estudiantes y empresas todos los días.',
+]
+
+// Números destacados (aparecen debajo de "Sobre mí")
 export const cifras = [
   { valor: '86', texto: 'aulas de Classroom administradas' },
   { valor: '5', texto: 'instituciones y espacios educativos' },
@@ -27,24 +31,48 @@ export const redes = [
   { nombre: 'Instagram', url: 'https://www.instagram.com/rodritorres.lab' },
 ]
 
-export const queHago = [
+// periodo: escribí las fechas, por ejemplo '2023 — Actualidad'
+export const experiencia = [
   {
-    titulo: 'Docencia',
-    texto:
-      'Robótica, programación y pensamiento computacional en todos los niveles, de primaria a secundaria.',
-    detalle: ['Arduino', 'ZUM Core 2.0', 'Rasti', 'Scratch'],
+    lugar: 'Instituto Cultural y Educativo del Sur',
+    sigla: 'ICES',
+    cargo: 'Director TIC y Desarrollador',
+    periodo: '',
+    descripcion:
+      'Dirijo el área de tecnología del instituto. Diseñé y desarrollé su sistema propio de gestión de notas, que hoy está en producción.',
+    etiquetas: ['Next.js', 'Supabase', 'Gestión TIC'],
   },
   {
-    titulo: 'Desarrollo web',
-    texto:
-      'Apps con Next.js, React y Supabase. Del prototipo al deploy, pensando siempre en quien la va a usar.',
-    detalle: ['Next.js', 'React', 'Supabase', 'Drizzle ORM'],
+    lugar: 'Instituto Cristiano Vicente López',
+    sigla: 'ICVL',
+    cargo: 'Líder TIC y Docente',
+    periodo: '',
+    descripcion: 'Lidero el área TIC de la institución y doy clases.',
+    etiquetas: ['Google Workspace', 'Docencia'],
   },
   {
-    titulo: 'Coordinación TIC',
-    texto:
-      'Soporte pedagógico y tecnológico de toda la institución, con Google Workspace for Education.',
-    detalle: ['86 aulas activas', 'Soporte institucional'],
+    lugar: 'Colegio Jesús en el Huerto',
+    sigla: 'CJH',
+    cargo: 'Docente de Informática',
+    periodo: '',
+    descripcion: '',
+    etiquetas: ['Informática', 'Programación'],
+  },
+  {
+    lugar: 'Potrero Digital',
+    sigla: 'PD',
+    cargo: 'Tutor',
+    periodo: '',
+    descripcion: 'Capacitación docente en TIC.',
+    etiquetas: ['Capacitación docente'],
+  },
+  {
+    lugar: 'Espacio Cultural Despacio',
+    sigla: 'ECD',
+    cargo: 'Taller de Robótica',
+    periodo: '',
+    descripcion: '',
+    etiquetas: ['Robótica', 'Arduino'],
   },
 ]
 
@@ -81,40 +109,16 @@ export const proyectos = [
   },
 ]
 
-export const experiencia = [
-  {
-    lugar: 'Instituto Cultural y Educativo del Sur (ICES)',
-    roles: ['Director TIC', 'Desarrollador'],
-    nota: 'Desarrollé el sistema de notas propio de la institución.',
-  },
-  {
-    lugar: 'Instituto Cristiano Vicente López (ICVL)',
-    roles: ['Líder TIC', 'Docente'],
-  },
-  {
-    lugar: 'Colegio Jesús en el Huerto',
-    roles: ['Docente de Informática'],
-  },
-  {
-    lugar: 'Potrero Digital',
-    roles: ['Tutor'],
-    nota: 'Capacitación docente en TIC.',
-  },
-  {
-    lugar: 'Espacio Cultural Despacio',
-    roles: ['Taller de Robótica'],
-  },
-]
-
 export const formacion = [
   {
     titulo: 'Profesorado de Informática',
     lugar: 'CONSUDEC V-5',
-    estado: '2.º año en curso',
+    sigla: 'CO',
+    periodo: 'En curso · 2.º año',
   },
 ]
 
-export const herramientas = [
+export const habilidades = [
   {
     grupo: 'Desarrollo',
     items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Drizzle ORM', 'Vercel', 'GitHub', 'v0'],
@@ -129,25 +133,10 @@ export const herramientas = [
   },
 ]
 
-export const disponible = [
-  { titulo: 'Coordinación TIC', texto: 'En instituciones educativas de todos los niveles.' },
-  { titulo: 'Desarrollo a medida', texto: 'ERPs, plataformas educativas y apps web.' },
-  { titulo: 'Capacitación docente', texto: 'Tecnología aplicada al aula real.' },
-]
+export const disponible = ['Coordinación TIC', 'Desarrollo a medida', 'Capacitación docente']
 
 export const personal = {
-  texto: [
-    'Casado con Cami, mi favorita.',
-    'Ministerio y comunidad de fe.',
-    'La música es mi idioma extra.',
-  ],
-  pasiones: ['Piano', 'Guitarra', 'Canto', 'Fútbol', 'Ajedrez', 'Marvel', 'Parques temáticos'],
-  cosasQueAmo: [
-    'el mate amargo',
-    'los viernes de fútbol',
-    'programar de noche',
-    'la lluvia en la ventana',
-    'enseñar y aprender',
-  ],
+  texto:
+    'Casado con Cami. Ministerio y comunidad de fe. La música es mi idioma extra: piano, guitarra y canto. También fútbol los viernes, ajedrez y el mate amargo mientras programo de noche.',
   versiculo: 'Filipenses 4:13',
 }

@@ -1,45 +1,30 @@
 import { useEffect, useState } from 'react'
-import {
-  ArrowUpRight,
-  ArrowDown,
-  Code2,
-  GraduationCap,
-  Instagram,
-  Linkedin,
-  MapPin,
-  Moon,
-  School,
-  Sun,
-} from 'lucide-react'
+import { ArrowUpRight, Instagram, Linkedin, Mail, MapPin, Moon, Sun } from 'lucide-react'
 import {
   perfil,
+  sobreMi,
   cifras,
   redes,
-  queHago,
-  proyectos,
   experiencia,
+  proyectos,
   formacion,
-  herramientas,
+  habilidades,
   disponible,
   personal,
 } from './data.js'
 
-const iconosQueHago = [GraduationCap, Code2, School]
 const iconosRedes = { LinkedIn: Linkedin, Instagram }
 
 /* ── Tema claro / oscuro ─────────────────────────────── */
 function useTema() {
-  const leer = () => {
-    try {
-      return localStorage.getItem('tema')
-    } catch {
-      return null
-    }
-  }
-  const sistemaOscuro = () => window.matchMedia('(prefers-color-scheme: dark)').matches
   const [oscuro, setOscuro] = useState(() => {
-    const t = leer()
-    return t ? t === 'dark' : sistemaOscuro()
+    try {
+      const t = localStorage.getItem('tema')
+      if (t) return t === 'dark'
+    } catch {
+      /* sin almacenamiento */
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
   })
 
   useEffect(() => {
@@ -52,7 +37,7 @@ function useTema() {
     try {
       localStorage.setItem('tema', nuevo ? 'dark' : 'light')
     } catch {
-      /* sin almacenamiento: no pasa nada */
+      /* sin almacenamiento */
     }
   }
   return [oscuro, alternar]
@@ -74,7 +59,7 @@ function useRevelar() {
             obs.unobserve(en.target)
           }
         }),
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' },
     )
     elementos.forEach((e) => obs.observe(e))
     return () => obs.disconnect()
@@ -82,25 +67,45 @@ function useRevelar() {
 }
 
 /* ── Piezas chicas ───────────────────────────────────── */
-function Seccion({ id, etiqueta, titulo, children }) {
+function Seccion({ id, titulo, children }) {
   return (
-    <section id={id} className="seccion" aria-labelledby={`${id}-titulo`}>
-      <div className="seccion-cabecera revelar">
-        <p className="eyebrow">{etiqueta}</p>
-        <h2 id={`${id}-titulo`}>{titulo}</h2>
-      </div>
+    <section id={id} className="seccion revelar" aria-labelledby={`${id}-titulo`}>
+      <h2 id={`${id}-titulo`} className="seccion-titulo">
+        {titulo}
+      </h2>
       {children}
     </section>
   )
 }
 
 function Etiquetas({ items }) {
+  if (!items?.length) return null
   return (
     <ul className="etiquetas">
       {items.map((i) => (
         <li key={i}>{i}</li>
       ))}
     </ul>
+  )
+}
+
+/* Fila tipo currículum: logo, nombre, cargo y fechas */
+function Fila({ sigla, titulo, subtitulo, periodo, descripcion, etiquetas }) {
+  return (
+    <li className="fila">
+      <span className="logo" aria-hidden="true">
+        {sigla}
+      </span>
+      <div className="fila-cuerpo">
+        <div className="fila-cabeza">
+          <h3>{titulo}</h3>
+          {periodo && <span className="periodo">{periodo}</span>}
+        </div>
+        <p className="fila-sub">{subtitulo}</p>
+        {descripcion && <p className="fila-texto">{descripcion}</p>}
+        <Etiquetas items={etiquetas} />
+      </div>
+    </li>
   )
 }
 
@@ -111,15 +116,9 @@ function Visual({ tipo }) {
       ['Matemática', '8', '9'],
       ['Lengua', '7', '8'],
       ['Informática', '10', '10'],
-      ['Historia', '9', '7'],
     ]
     return (
       <div className="vis vis-notas" aria-hidden="true">
-        <div className="vis-barra">
-          <span />
-          <span />
-          <span />
-        </div>
         {filas.map(([m, a, b]) => (
           <div key={m} className="vis-fila">
             <span className="vis-texto">{m}</span>
@@ -171,7 +170,6 @@ function Visual({ tipo }) {
 export default function App() {
   const [oscuro, alternarTema] = useTema()
   useRevelar()
-  const linkedin = redes.find((r) => r.nombre === 'LinkedIn')
   const iniciales = perfil.nombre
     .split(' ')
     .map((p) => p[0])
@@ -186,235 +184,184 @@ export default function App() {
       <header className="barra">
         <div className="contenedor barra-interior">
           <a href="#inicio" className="marca">
-            <span className="marca-chip" aria-hidden="true">
-              {iniciales}
-            </span>
             {perfil.marca}
           </a>
           <nav aria-label="Secciones">
-            <a href="#servicios">Servicios</a>
-            <a href="#proyectos">Proyectos</a>
+            <a href="#sobre-mi">Sobre mí</a>
             <a href="#experiencia">Experiencia</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
           </nav>
-          <a href="#contacto" className="boton boton-chico boton-principal ocultar-movil">
-            Contacto
-          </a>
           <button
             type="button"
             className="boton-icono"
             onClick={alternarTema}
             aria-label={oscuro ? 'Pasar a modo claro' : 'Pasar a modo oscuro'}
           >
-            {oscuro ? <Sun size={17} /> : <Moon size={17} />}
+            {oscuro ? <Sun size={16} /> : <Moon size={16} />}
           </button>
         </div>
       </header>
 
-      <main id="contenido">
-        {/* HERO */}
-        <section id="inicio" className="hero">
-          <div className="hero-fondo" aria-hidden="true" />
-          <div className="contenedor hero-grilla">
-            <div className="hero-texto">
-              <p className="pastilla aparecer">
-                <span className="led" aria-hidden="true" />
-                {perfil.estado}
-              </p>
-              <h1 className="aparecer" style={{ animationDelay: '80ms' }}>
-                {perfil.nombre}
-              </h1>
-              <p className="lema aparecer" style={{ animationDelay: '160ms' }}>
-                Construyo tecnología educativa que funciona en el{' '}
-                <span className="resaltado">aula real</span>.
-              </p>
-              <p className="bajada aparecer" style={{ animationDelay: '240ms' }}>
-                {perfil.bajada}
-              </p>
-              <div className="acciones aparecer" style={{ animationDelay: '320ms' }}>
-                <a href="#proyectos" className="boton boton-principal">
-                  Ver proyectos <ArrowDown size={16} />
-                </a>
-                {linkedin && (
-                  <a href={linkedin.url} className="boton" target="_blank" rel="noopener noreferrer">
-                    <Linkedin size={16} /> LinkedIn
-                  </a>
-                )}
-              </div>
-            </div>
-
-            <aside className="credencial aparecer" style={{ animationDelay: '200ms' }} aria-label="Resumen">
-              <div className="credencial-cabeza">
-                <div className="avatar" aria-hidden="true">
-                  {iniciales}
-                </div>
-                <div>
-                  <p className="credencial-nombre">{perfil.nombre}</p>
-                  <p className="credencial-lugar">
-                    <MapPin size={13} /> {perfil.ubicacion}
-                  </p>
-                </div>
-              </div>
-              <ul className="credencial-roles">
-                {perfil.roles.map((r, i) => {
-                  const Icono = iconosQueHago[i] || Code2
-                  return (
-                    <li key={r}>
-                      <Icono size={16} />
-                      {r}
-                    </li>
-                  )
-                })}
-              </ul>
-              <dl className="cifras">
-                {cifras.map((c) => (
-                  <div key={c.texto}>
-                    <dt>{c.valor}</dt>
-                    <dd>{c.texto}</dd>
-                  </div>
-                ))}
-              </dl>
-            </aside>
-          </div>
-        </section>
-
-        <div className="contenedor">
-          {/* SERVICIOS */}
-          <Seccion id="servicios" etiqueta="Lo que hago" titulo="Educación y software, en el mismo lugar">
-            <div className="grilla-3">
-              {queHago.map((q, i) => {
-                const Icono = iconosQueHago[i] || Code2
-                return (
-                  <article key={q.titulo} className="tarjeta revelar" style={{ transitionDelay: `${i * 80}ms` }}>
-                    <span className="icono-caja">
-                      <Icono size={20} />
-                    </span>
-                    <h3>{q.titulo}</h3>
-                    <p>{q.texto}</p>
-                    <Etiquetas items={q.detalle} />
-                  </article>
-                )
-              })}
-            </div>
-          </Seccion>
-
-          {/* PROYECTOS */}
-          <Seccion id="proyectos" etiqueta="Proyectos" titulo="Sistemas que se usan todos los días">
-            <div className="grilla-2">
-              {proyectos.map((p, i) => (
-                <article
-                  key={p.nombre}
-                  className="tarjeta proyecto revelar"
-                  style={{ transitionDelay: `${(i % 2) * 80}ms` }}
-                >
-                  <Visual tipo={p.visual} />
-                  <div className="proyecto-cuerpo">
-                    <span className={`estado ${p.estado === 'Prototipo' ? 'estado-proto' : ''}`}>
-                      <span className="led" aria-hidden="true" />
-                      {p.estado}
-                    </span>
-                    <h3>{p.nombre}</h3>
-                    <p>{p.texto}</p>
-                    <Etiquetas items={p.tecnologias} />
-                  </div>
-                </article>
-              ))}
-            </div>
-          </Seccion>
-
-          {/* EXPERIENCIA */}
-          <Seccion id="experiencia" etiqueta="Trayectoria" titulo="Experiencia y formación">
-            <div className="experiencia">
-              <ol className="linea revelar">
-                {experiencia.map((e) => (
-                  <li key={e.lugar}>
-                    <div className="linea-cabeza">
-                      <h3>{e.lugar}</h3>
-                      <p className="cargos">{e.roles.join(' · ')}</p>
-                    </div>
-                    {e.nota && <p className="nota">{e.nota}</p>}
-                  </li>
-                ))}
-              </ol>
-              <div className="columna-lateral">
-                <aside className="tarjeta revelar" aria-label="Formación">
-                  <p className="eyebrow">Formación</p>
-                  {formacion.map((f) => (
-                    <div key={f.titulo} className="formacion">
-                      <h3>{f.titulo}</h3>
-                      <p>{f.lugar}</p>
-                      <span className="estado">
-                        <span className="led" aria-hidden="true" />
-                        {f.estado}
-                      </span>
-                    </div>
-                  ))}
-                </aside>
-                <aside className="tarjeta revelar" aria-label="Herramientas">
-                  <p className="eyebrow">Herramientas</p>
-                  {herramientas.map((h) => (
-                    <div key={h.grupo} className="herramientas-grupo">
-                      <p className="grupo-titulo">{h.grupo}</p>
-                      <Etiquetas items={h.items} />
-                    </div>
-                  ))}
-                </aside>
-              </div>
-            </div>
-          </Seccion>
-
-          {/* PERSONAL */}
-          <Seccion id="fuera-del-aula" etiqueta="Fuera del aula" titulo="Lo que me mueve">
-            <div className="personal revelar">
-              <ul className="personal-texto">
-                {personal.texto.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
-              </ul>
-              <div>
-                <Etiquetas items={personal.pasiones} />
-                <p className="cosas">{personal.cosasQueAmo.join(' · ')}</p>
-              </div>
-            </div>
-          </Seccion>
-
-          {/* CONTACTO */}
-          <section id="contacto" className="contacto revelar" aria-labelledby="contacto-titulo">
-            <div className="contacto-brillo" aria-hidden="true" />
-            <p className="eyebrow">Contacto</p>
-            <h2 id="contacto-titulo">¿Trabajamos juntos?</h2>
-            <p className="contacto-bajada">Estoy disponible para proyectos y colaboraciones en:</p>
-            <ul className="grilla-3 disponible">
-              {disponible.map((d) => (
-                <li key={d.titulo}>
-                  <h3>{d.titulo}</h3>
-                  <p>{d.texto}</p>
-                </li>
-              ))}
-            </ul>
-            <div className="acciones">
-              {redes.map((r, i) => {
+      <main id="contenido" className="contenedor">
+        {/* 1. PRESENTACIÓN */}
+        <section id="inicio" className="presentacion">
+          <div className="presentacion-texto">
+            <h1 className="aparecer">Hola, soy {perfil.nombreCorto} 👋</h1>
+            <p className="frase aparecer" style={{ animationDelay: '80ms' }}>
+              {perfil.frase}
+            </p>
+            <p className="datos aparecer" style={{ animationDelay: '160ms' }}>
+              <span>{perfil.titulo}</span>
+              <span className="datos-lugar">
+                <MapPin size={14} /> {perfil.ubicacion}
+              </span>
+            </p>
+            <div className="acciones aparecer" style={{ animationDelay: '240ms' }}>
+              <a href="#contacto" className="boton boton-principal">
+                <Mail size={16} /> Contactame
+              </a>
+              {redes.map((r) => {
                 const Icono = iconosRedes[r.nombre] || ArrowUpRight
                 return (
                   <a
                     key={r.nombre}
                     href={r.url}
-                    className={`boton ${i === 0 ? 'boton-principal' : ''}`}
+                    className="boton boton-icono-grande"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`${r.nombre} de ${perfil.nombre}`}
                   >
-                    <Icono size={16} /> Escribime por {r.nombre}
+                    <Icono size={17} />
                   </a>
                 )
               })}
             </div>
-          </section>
-        </div>
+          </div>
+          <div className="avatar-grande aparecer" style={{ animationDelay: '120ms' }} aria-hidden="true">
+            {iniciales}
+            <span className="avatar-estado" title={perfil.estado} />
+          </div>
+        </section>
+        <p className="estado-linea aparecer" style={{ animationDelay: '300ms' }}>
+          <span className="led" aria-hidden="true" />
+          {perfil.estado}
+        </p>
+
+        {/* 2. SOBRE MÍ */}
+        <Seccion id="sobre-mi" titulo="Sobre mí">
+          {sobreMi.map((p) => (
+            <p key={p.slice(0, 20)} className="parrafo">
+              {p}
+            </p>
+          ))}
+          <dl className="cifras">
+            {cifras.map((c) => (
+              <div key={c.texto}>
+                <dt>{c.valor}</dt>
+                <dd>{c.texto}</dd>
+              </div>
+            ))}
+          </dl>
+        </Seccion>
+
+        {/* 3. EXPERIENCIA */}
+        <Seccion id="experiencia" titulo="Experiencia">
+          <ul className="filas">
+            {experiencia.map((e) => (
+              <Fila
+                key={e.lugar}
+                sigla={e.sigla}
+                titulo={e.lugar}
+                subtitulo={e.cargo}
+                periodo={e.periodo}
+                descripcion={e.descripcion}
+                etiquetas={e.etiquetas}
+              />
+            ))}
+          </ul>
+        </Seccion>
+
+        {/* 4. PROYECTOS */}
+        <Seccion id="proyectos" titulo="Proyectos">
+          <p className="parrafo">
+            Sistemas reales, hechos para resolver problemas concretos de instituciones y empresas.
+          </p>
+          <div className="proyectos">
+            {proyectos.map((p) => (
+              <article key={p.nombre} className="proyecto">
+                <Visual tipo={p.visual} />
+                <div className="proyecto-cuerpo">
+                  <span className={`estado ${p.estado === 'Prototipo' ? 'estado-proto' : ''}`}>
+                    <span className="led" aria-hidden="true" />
+                    {p.estado}
+                  </span>
+                  <h3>{p.nombre}</h3>
+                  <p>{p.texto}</p>
+                  <Etiquetas items={p.tecnologias} />
+                </div>
+              </article>
+            ))}
+          </div>
+        </Seccion>
+
+        {/* 5. EDUCACIÓN */}
+        <Seccion id="educacion" titulo="Educación">
+          <ul className="filas">
+            {formacion.map((f) => (
+              <Fila key={f.titulo} sigla={f.sigla} titulo={f.lugar} subtitulo={f.titulo} periodo={f.periodo} />
+            ))}
+          </ul>
+        </Seccion>
+
+        {/* 6. HABILIDADES */}
+        <Seccion id="habilidades" titulo="Habilidades">
+          <div className="habilidades">
+            {habilidades.map((h) => (
+              <div key={h.grupo}>
+                <p className="grupo-titulo">{h.grupo}</p>
+                <Etiquetas items={h.items} />
+              </div>
+            ))}
+          </div>
+        </Seccion>
+
+        {/* 7. FUERA DEL AULA */}
+        <Seccion id="fuera-del-aula" titulo="Fuera del aula">
+          <p className="parrafo">{personal.texto}</p>
+        </Seccion>
+
+        {/* 8. CONTACTO */}
+        <section id="contacto" className="contacto revelar" aria-labelledby="contacto-titulo">
+          <p className="pastilla">Contacto</p>
+          <h2 id="contacto-titulo">Hablemos</h2>
+          <p className="parrafo">
+            Estoy disponible para {disponible.slice(0, -1).join(', ')} y {disponible[disponible.length - 1]}.
+            Escribime y te respondo a la brevedad.
+          </p>
+          <div className="acciones acciones-centro">
+            {redes.map((r, i) => {
+              const Icono = iconosRedes[r.nombre] || ArrowUpRight
+              return (
+                <a
+                  key={r.nombre}
+                  href={r.url}
+                  className={`boton ${i === 0 ? 'boton-principal' : ''}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icono size={16} /> {r.nombre}
+                </a>
+              )
+            })}
+          </div>
+        </section>
       </main>
 
       <footer className="pie">
         <div className="contenedor pie-interior">
           <span>
-            © {new Date().getFullYear()} {perfil.nombre} · {perfil.marca}
+            © {new Date().getFullYear()} {perfil.nombre}
           </span>
           <span>{personal.versiculo}</span>
         </div>
