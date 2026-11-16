@@ -238,9 +238,13 @@ export default function App() {
               })}
             </div>
           </div>
-          <div className="avatar-grande aparecer" style={{ animationDelay: '120ms' }} aria-hidden="true">
-            {iniciales}
-            <span className="avatar-estado" title={perfil.estado} />
+          <div className="avatar-grande aparecer" style={{ animationDelay: '120ms' }}>
+            {perfil.foto ? (
+              <img src={perfil.foto} alt={`Foto de ${perfil.nombre}`} width="288" height="288" />
+            ) : (
+              <span aria-hidden="true">{iniciales}</span>
+            )}
+            <span className="avatar-estado" title={perfil.estado} aria-hidden="true" />
           </div>
         </section>
         <p className="estado-linea aparecer" style={{ animationDelay: '300ms' }}>

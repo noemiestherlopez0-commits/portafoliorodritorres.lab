@@ -12,6 +12,7 @@ export const perfil = {
   frase: 'Construyo tecnología educativa que funciona en el aula real.',
   ubicacion: 'Vicente López, Buenos Aires',
   estado: 'Abierto a oportunidades remotas',
+  foto: '/rodrigo.jpg', // la foto está en la carpeta public/
 }
 
 export const sobreMi = [
