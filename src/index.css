@@ -394,6 +394,63 @@ a {
   background: var(--superficie);
   border: 1px solid var(--borde-fuerte);
 }
+.logo-imagen {
+  background: #ffffff;
+  padding: 0.3rem;
+  overflow: hidden;
+}
+.logo-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ── Carrusel de logos ────────────────────────────────── */
+.carrusel-seccion {
+  margin-top: 3.5rem;
+}
+.carrusel-titulo {
+  font-size: 0.8rem;
+  color: var(--tinta-3);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.carrusel {
+  overflow: hidden;
+  /* bordes que se desvanecen a los costados */
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.carrusel-pista {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: desfilar 28s linear infinite;
+}
+.carrusel:hover .carrusel-pista {
+  animation-play-state: paused;
+}
+.carrusel-item {
+  flex-shrink: 0;
+  height: 5rem;
+  padding: 0 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+}
+.carrusel-item img {
+  height: 3.6rem;
+  width: auto;
+  max-width: 11rem;
+  object-fit: contain;
+}
+@keyframes desfilar {
+  to { transform: translateX(calc(-50% - 0.5rem)); }
+}
+
 .fila-cuerpo {
   flex: 1;
   min-width: 0;
@@ -576,6 +633,10 @@ a {
     transition: none !important;
   }
   .revelar { opacity: 1; transform: none; }
+  /* sin movimiento: los logos quedan quietos y se acomodan en filas */
+  .carrusel { mask-image: none; -webkit-mask-image: none; }
+  .carrusel-pista { width: auto; flex-wrap: wrap; justify-content: center; }
+  .carrusel-item[aria-hidden='true'] { display: none; }
 }
 
 /* ── Dibujos de los proyectos ─────────────────────────── */

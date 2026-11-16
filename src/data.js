@@ -32,6 +32,15 @@ export const redes = [
   { nombre: 'Instagram', url: 'https://www.instagram.com/rodritorres.lab' },
 ]
 
+// Logos que pasan en el carrusel "Dónde trabajé" (las imágenes están en public/logos/)
+export const logos = [
+  { nombre: 'Instituto Cristiano Vicente López', imagen: '/logos/icvl.webp' },
+  { nombre: 'Colegio Jesús en el Huerto de los Olivos', imagen: '/logos/huerto.webp' },
+  { nombre: 'Potrero Digital · Picadito', imagen: '/logos/picadito.webp' },
+  { nombre: 'Patronato de la Infancia', imagen: '/logos/patronato.webp' },
+  { nombre: 'Espacio Cultural Despacio', imagen: '/logos/despacio.webp' },
+]
+
 // periodo: escribí las fechas, por ejemplo '2023 — Actualidad'
 export const experiencia = [
   {
@@ -46,30 +55,43 @@ export const experiencia = [
   {
     lugar: 'Instituto Cristiano Vicente López',
     sigla: 'ICVL',
+    logo: '/logos/icvl.webp',
     cargo: 'Líder TIC y Docente',
     periodo: '',
     descripcion: 'Lidero el área TIC de la institución y doy clases.',
     etiquetas: ['Google Workspace', 'Docencia'],
   },
   {
-    lugar: 'Colegio Jesús en el Huerto',
+    lugar: 'Colegio Jesús en el Huerto de los Olivos',
     sigla: 'CJH',
+    logo: '/logos/huerto.webp',
     cargo: 'Docente de Informática',
     periodo: '',
     descripcion: '',
     etiquetas: ['Informática', 'Programación'],
   },
   {
-    lugar: 'Potrero Digital',
+    lugar: 'Potrero Digital · Picadito',
     sigla: 'PD',
+    logo: '/logos/picadito.webp',
     cargo: 'Tutor',
     periodo: '',
     descripcion: 'Capacitación docente en TIC.',
     etiquetas: ['Capacitación docente'],
   },
   {
+    lugar: 'Patronato de la Infancia',
+    sigla: 'PI',
+    logo: '/logos/patronato.webp',
+    cargo: '', // ← completar: ¿qué rol tuviste acá?
+    periodo: '',
+    descripcion: '',
+    etiquetas: [],
+  },
+  {
     lugar: 'Espacio Cultural Despacio',
     sigla: 'ECD',
+    logo: '/logos/despacio.webp',
     cargo: 'Taller de Robótica',
     periodo: '',
     descripcion: '',

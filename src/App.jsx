@@ -4,6 +4,7 @@ import {
   perfil,
   sobreMi,
   cifras,
+  logos,
   redes,
   experiencia,
   proyectos,
@@ -90,22 +91,37 @@ function Etiquetas({ items }) {
 }
 
 /* Fila tipo currículum: logo, nombre, cargo y fechas */
-function Fila({ sigla, titulo, subtitulo, periodo, descripcion, etiquetas }) {
+function Fila({ sigla, logo, titulo, subtitulo, periodo, descripcion, etiquetas }) {
   return (
     <li className="fila">
-      <span className="logo" aria-hidden="true">
-        {sigla}
+      <span className={`logo ${logo ? 'logo-imagen' : ''}`} aria-hidden="true">
+        {logo ? <img src={logo} alt="" loading="lazy" /> : sigla}
       </span>
       <div className="fila-cuerpo">
         <div className="fila-cabeza">
           <h3>{titulo}</h3>
           {periodo && <span className="periodo">{periodo}</span>}
         </div>
-        <p className="fila-sub">{subtitulo}</p>
+        {subtitulo && <p className="fila-sub">{subtitulo}</p>}
         {descripcion && <p className="fila-texto">{descripcion}</p>}
         <Etiquetas items={etiquetas} />
       </div>
     </li>
+  )
+}
+
+/* Logos que pasan solos, en loop. Se duplica la lista para que no haya cortes. */
+function Carrusel() {
+  return (
+    <div className="carrusel">
+      <ul className="carrusel-pista">
+        {[...logos, ...logos].map((l, i) => (
+          <li key={i} className="carrusel-item" aria-hidden={i >= logos.length}>
+            <img src={l.imagen} alt={i < logos.length ? l.nombre : ''} loading="lazy" />
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
@@ -252,6 +268,14 @@ export default function App() {
           {perfil.estado}
         </p>
 
+        {/* CARRUSEL DE LOGOS */}
+        <section className="carrusel-seccion aparecer" style={{ animationDelay: '360ms' }} aria-labelledby="donde-titulo">
+          <p id="donde-titulo" className="carrusel-titulo">
+            Instituciones donde trabajé
+          </p>
+          <Carrusel />
+        </section>
+
         {/* 2. SOBRE MÍ */}
         <Seccion id="sobre-mi" titulo="Sobre mí">
           {sobreMi.map((p) => (
@@ -276,6 +300,7 @@ export default function App() {
               <Fila
                 key={e.lugar}
                 sigla={e.sigla}
+                logo={e.logo}
                 titulo={e.lugar}
                 subtitulo={e.cargo}
                 periodo={e.periodo}
