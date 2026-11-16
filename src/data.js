@@ -15,6 +15,13 @@ export const perfil = {
   estado: 'Abierto a oportunidades remotas',
 }
 
+// Números destacados que aparecen debajo del título principal
+export const cifras = [
+  { valor: '86', texto: 'aulas de Classroom administradas' },
+  { valor: '5', texto: 'instituciones y espacios educativos' },
+  { valor: '2', texto: 'sistemas propios en producción' },
+]
+
 export const redes = [
   { nombre: 'LinkedIn', url: 'https://ar.linkedin.com/in/rodritorreslab' },
   { nombre: 'Instagram', url: 'https://www.instagram.com/rodritorres.lab' },
@@ -44,6 +51,7 @@ export const queHago = [
 export const proyectos = [
   {
     nombre: 'Gestión de Notas ICES',
+    visual: 'notas', // dibujo de la tarjeta: notas | agenda | aulas | colectivo
     texto:
       'Sistema completo de calificaciones: login por PIN, boletines y guardado automático. 5 cursos, 2 cuatrimestres.',
     tecnologias: ['Next.js', 'Supabase'],
@@ -51,12 +59,14 @@ export const proyectos = [
   },
   {
     nombre: 'ERP Los Jazmines',
+    visual: 'agenda',
     texto: 'Sistema de gestión para un salón de eventos: reservas, clientes y administración diaria.',
     tecnologias: ['React', 'Supabase'],
     estado: 'En producción',
   },
   {
     nombre: 'Classroom ×86',
+    visual: 'aulas',
     texto:
       'Arquitectura y administración completa de Google Classroom institucional, armado desde cero.',
     tecnologias: ['Google Workspace'],
@@ -64,6 +74,7 @@ export const proyectos = [
   },
   {
     nombre: 'El Colectivo',
+    visual: 'colectivo',
     texto: 'App web gamificada (PWA) con temática de colectivo porteño.',
     tecnologias: ['React', 'Vite', 'Canvas', 'Tailwind'],
     estado: 'Prototipo',
