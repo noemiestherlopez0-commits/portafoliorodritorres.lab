@@ -318,8 +318,14 @@ export default function App() {
           </p>
           <div className="proyectos">
             {proyectos.map((p) => (
-              <article key={p.nombre} className="proyecto">
-                <Visual tipo={p.visual} />
+              <article key={p.nombre} className={`proyecto ${p.destacado ? 'destacado' : ''}`}>
+                {p.imagen ? (
+                  <div className="captura">
+                    <img src={p.imagen} alt={`Captura de ${p.nombre}`} loading="lazy" />
+                  </div>
+                ) : (
+                  <Visual tipo={p.visual} />
+                )}
                 <div className="proyecto-cuerpo">
                   <span className={`estado ${p.estado === 'Prototipo' ? 'estado-proto' : ''}`}>
                     <span className="led" aria-hidden="true" />
@@ -328,6 +334,11 @@ export default function App() {
                   <h3>{p.nombre}</h3>
                   <p>{p.texto}</p>
                   <Etiquetas items={p.tecnologias} />
+                  {p.enlace && (
+                    <a className="enlace" href={p.enlace} target="_blank" rel="noopener noreferrer">
+                      {p.enlaceTexto || 'Ver proyecto'} <ArrowUpRight size={14} />
+                    </a>
+                  )}
                 </div>
               </article>
             ))}

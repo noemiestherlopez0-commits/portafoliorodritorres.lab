@@ -556,6 +556,44 @@ a {
   padding-top: 0.5rem;
 }
 
+@media (min-width: 640px) {
+  .proyecto.destacado { grid-column: 1 / -1; }
+  .proyecto:not(.destacado):last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+.captura {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--borde);
+  background: var(--fondo-2);
+}
+.captura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.proyecto:hover .captura img {
+  transform: scale(1.03);
+}
+.enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--acento);
+  width: fit-content;
+}
+.enlace:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.proyecto .etiquetas + .enlace {
+  margin-top: 0.75rem;
+}
+
 /* Habilidades */
 .habilidades {
   display: flex;

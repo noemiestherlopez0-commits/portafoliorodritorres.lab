@@ -24,7 +24,7 @@ export const sobreMi = [
 export const cifras = [
   { valor: '86', texto: 'aulas de Classroom administradas' },
   { valor: '5', texto: 'instituciones y espacios educativos' },
-  { valor: '2', texto: 'sistemas propios en producción' },
+  { valor: '3', texto: 'sistemas propios en producción' },
 ]
 
 export const redes = [
@@ -99,20 +99,37 @@ export const experiencia = [
   },
 ]
 
+// imagen: captura del proyecto (en public/proyectos/). Si no hay, se usa el dibujo de "visual".
+// destacado: true → la tarjeta ocupa todo el ancho.
 export const proyectos = [
+  {
+    nombre: 'Sistema Los Jazmines Eventos',
+    imagen: '/proyectos/jazmines.webp',
+    destacado: true,
+    texto:
+      'Software de gestión a medida para un salón de eventos: eventos, calendario, vendedores, cotizaciones, cobro de cuotas, cajas, almacén, producción, recetas y finanzas. Genera contratos y avisa quién tiene que pagar.',
+    tecnologias: ['React', 'Supabase', 'Vercel'],
+    estado: 'En producción',
+    enlace: 'https://www.instagram.com/losjazmines.eventos/',
+    enlaceTexto: 'Conocé al cliente',
+  },
+  {
+    nombre: 'Petra · Cotizador para eventos',
+    imagen: '/proyectos/petra.webp',
+    destacado: true,
+    texto:
+      'Producto propio. Un link donde el cliente arma su evento y ve el precio al instante, las 24 horas. Al salón le llega el pedido por WhatsApp. Gratis para empezar y con la marca de cada salón.',
+    tecnologias: ['Producto SaaS', 'Vercel'],
+    estado: 'En producción',
+    enlace: 'https://www.petraeventos.com/',
+    enlaceTexto: 'Visitar petraeventos.com',
+  },
   {
     nombre: 'Gestión de Notas ICES',
     visual: 'notas', // dibujo de la tarjeta: notas | agenda | aulas | colectivo
     texto:
       'Sistema completo de calificaciones: login por PIN, boletines y guardado automático. 5 cursos, 2 cuatrimestres.',
     tecnologias: ['Next.js', 'Supabase'],
-    estado: 'En producción',
-  },
-  {
-    nombre: 'ERP Los Jazmines',
-    visual: 'agenda',
-    texto: 'Sistema de gestión para un salón de eventos: reservas, clientes y administración diaria.',
-    tecnologias: ['React', 'Supabase'],
     estado: 'En producción',
   },
   {
