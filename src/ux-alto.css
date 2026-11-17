@@ -41,3 +41,10 @@
     margin-top: clamp(1.25rem, 3vh, 2rem);
   }
 }
+
+/* El nombre de arriba también es fácil de tocar con el dedo (44 px) */
+.marca {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
