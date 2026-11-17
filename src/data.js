@@ -21,10 +21,10 @@ export const perfil = {
 
 // Números destacados (aparecen debajo de la presentación)
 export const cifras = [
-  { valor: '3', texto: 'sistemas propios en producción' },
-  { valor: '50', texto: 'docentes usan mi sistema de notas' },
-  { valor: '86', texto: 'aulas de Classroom coordinadas' },
-  { valor: '9', texto: 'instituciones y espacios donde trabajé' },
+  { valor: '+500', texto: 'alumnos asistieron a mis clases' },
+  { valor: '10', texto: 'instituciones confiaron en mí' },
+  { valor: '3', texto: 'años dando clases' },
+  { valor: '+5 a +75', texto: 'años: las edades con las que trabajo' },
 ]
 
 export const redes = [
