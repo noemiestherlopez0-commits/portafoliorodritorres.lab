@@ -7,10 +7,12 @@ import {
   Linkedin,
   Mail,
   MapPin,
+  Menu,
   Moon,
   Quote,
   School,
   Sun,
+  X,
 } from 'lucide-react'
 import {
   perfil,
@@ -79,14 +81,63 @@ function useRevelar() {
   }, [])
 }
 
+/* ── Sección visible (para resaltar el menú) ──────────── */
+function useSeccionActiva(ids) {
+  const [activa, setActiva] = useState('')
+  useEffect(() => {
+    if (!('IntersectionObserver' in window)) return
+    const obs = new IntersectionObserver(
+      (entradas) =>
+        entradas.forEach((en) => {
+          if (en.isIntersecting) setActiva(en.target.id)
+        }),
+      { rootMargin: '-45% 0px -50% 0px' },
+    )
+    ids.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) obs.observe(el)
+    })
+    return () => obs.disconnect()
+  }, [])
+  return activa
+}
+
+/* ── Botón flotante de contacto (solo celular) ───────── */
+function useMostrarFlotante() {
+  const [mostrar, setMostrar] = useState(false)
+  useEffect(() => {
+    let pendiente = false
+    const revisar = () => {
+      pendiente = false
+      const contacto = document.getElementById('contacto')
+      const llegoAlContacto = contacto && contacto.getBoundingClientRect().top < window.innerHeight
+      setMostrar(window.scrollY > 650 && !llegoAlContacto)
+    }
+    const alScrollear = () => {
+      if (!pendiente) {
+        pendiente = true
+        requestAnimationFrame(revisar)
+      }
+    }
+    window.addEventListener('scroll', alScrollear, { passive: true })
+    revisar()
+    return () => window.removeEventListener('scroll', alScrollear)
+  }, [])
+  return mostrar
+}
+
 /* ── Piezas chicas ───────────────────────────────────── */
-function Seccion({ id, titulo, children }) {
+function Seccion({ id, titulo, lateral = false, children }) {
   return (
-    <section id={id} className="seccion revelar" aria-labelledby={`${id}-titulo`}>
+    <section
+      id={id}
+      className={`seccion revelar ${lateral ? 'seccion-lateral' : ''}`}
+      aria-labelledby={`${id}-titulo`}
+    >
       <h2 id={`${id}-titulo`} className="seccion-titulo">
         {titulo}
       </h2>
-      {children}
+      <div className="seccion-cuerpo">{children}</div>
     </section>
   )
 }
@@ -202,6 +253,22 @@ function Visual({ tipo }) {
 export default function App() {
   const [oscuro, alternarTema] = useTema()
   useRevelar()
+  const [menuAbierto, setMenuAbierto] = useState(false)
+  const activa = useSeccionActiva(['servicios', 'proyectos', 'experiencia', 'contacto'])
+  const mostrarFlotante = useMostrarFlotante()
+  const enlacesMenu = [
+    ['servicios', 'Servicios'],
+    ['proyectos', 'Proyectos'],
+    ['experiencia', 'Experiencia'],
+    ['contacto', 'Contacto'],
+  ]
+
+  useEffect(() => {
+    if (!menuAbierto) return
+    const alTeclear = (e) => e.key === 'Escape' && setMenuAbierto(false)
+    window.addEventListener('keydown', alTeclear)
+    return () => window.removeEventListener('keydown', alTeclear)
+  }, [menuAbierto])
   const mailto = `mailto:${perfil.email}?subject=${encodeURIComponent('Consulta desde tu portafolio')}`
   const iniciales = perfil.nombre
     .split(' ')
@@ -219,11 +286,12 @@ export default function App() {
           <a href="#inicio" className="marca">
             {perfil.marca}
           </a>
-          <nav aria-label="Secciones">
-            <a href="#servicios">Servicios</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#experiencia">Experiencia</a>
-            <a href="#contacto">Contacto</a>
+          <nav aria-label="Secciones" className="menu-escritorio">
+            {enlacesMenu.map(([id, texto]) => (
+              <a key={id} href={`#${id}`} className={activa === id ? 'activo' : ''}>
+                {texto}
+              </a>
+            ))}
           </nav>
           <button
             type="button"
@@ -231,16 +299,48 @@ export default function App() {
             onClick={alternarTema}
             aria-label={oscuro ? 'Pasar a modo claro' : 'Pasar a modo oscuro'}
           >
-            {oscuro ? <Sun size={16} /> : <Moon size={16} />}
+            {oscuro ? <Sun size={17} /> : <Moon size={17} />}
+          </button>
+          <button
+            type="button"
+            className="boton-icono boton-menu"
+            onClick={() => setMenuAbierto((v) => !v)}
+            aria-expanded={menuAbierto}
+            aria-controls="menu-movil"
+            aria-label={menuAbierto ? 'Cerrar menú' : 'Abrir menú'}
+          >
+            {menuAbierto ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
+        <nav
+          id="menu-movil"
+          aria-label="Secciones"
+          className={`menu-movil ${menuAbierto ? 'abierto' : ''}`}
+          hidden={!menuAbierto}
+        >
+          <div className="contenedor">
+            {enlacesMenu.map(([id, texto]) => (
+              <a key={id} href={`#${id}`} onClick={() => setMenuAbierto(false)}>
+                {texto}
+              </a>
+            ))}
+            <a href={mailto} className="boton boton-principal" onClick={() => setMenuAbierto(false)}>
+              <Mail size={16} /> Contame tu proyecto
+            </a>
+          </div>
+        </nav>
       </header>
 
       <main id="contenido" className="contenedor">
         {/* 1. PRESENTACIÓN */}
         <section id="inicio" className="presentacion">
           <div className="presentacion-texto">
-            <p className="saludo aparecer">Hola, soy {perfil.nombre} 👋</p>
+            <p className="saludo aparecer">
+              {perfil.foto && (
+                <img className="avatar-mini" src={perfil.foto} alt="" width="288" height="288" aria-hidden="true" />
+              )}
+              <span>Hola, soy {perfil.nombre} 👋</span>
+            </p>
             <h1 className="aparecer" style={{ animationDelay: '60ms' }}>
               {perfil.titular}
             </h1>
@@ -383,7 +483,7 @@ export default function App() {
         </Seccion>
 
         {/* 3. EXPERIENCIA */}
-        <Seccion id="experiencia" titulo="Experiencia">
+        <Seccion lateral id="experiencia" titulo="Experiencia">
           <ul className="filas">
             {experiencia.map((e) => (
               <Fila
@@ -402,7 +502,7 @@ export default function App() {
         </Seccion>
 
         {/* SOBRE MÍ */}
-        <Seccion id="sobre-mi" titulo="Sobre mí">
+        <Seccion lateral id="sobre-mi" titulo="Sobre mí">
           {sobreMi.map((p) => (
             <p key={p.slice(0, 20)} className="parrafo">
               {p}
@@ -411,7 +511,7 @@ export default function App() {
         </Seccion>
 
         {/* EDUCACIÓN */}
-        <Seccion id="educacion" titulo="Educación">
+        <Seccion lateral id="educacion" titulo="Educación">
           <ul className="filas">
             {formacion.map((f) => (
               <Fila key={f.titulo} sigla={f.sigla} titulo={f.lugar} subtitulo={f.titulo} periodo={f.periodo} />
@@ -420,7 +520,7 @@ export default function App() {
         </Seccion>
 
         {/* 6. HABILIDADES */}
-        <Seccion id="habilidades" titulo="Habilidades">
+        <Seccion lateral id="habilidades" titulo="Habilidades">
           <div className="habilidades">
             {habilidades.map((h) => (
               <div key={h.grupo}>
@@ -463,6 +563,15 @@ export default function App() {
           </p>
         </section>
       </main>
+
+      <a
+        href={mailto}
+        className={`flotante boton boton-principal ${mostrarFlotante ? 'visible' : ''}`}
+        tabIndex={mostrarFlotante ? 0 : -1}
+        aria-hidden={!mostrarFlotante}
+      >
+        <Mail size={16} /> Contame tu proyecto
+      </a>
 
       <footer className="pie">
         <div className="contenedor pie-interior">
