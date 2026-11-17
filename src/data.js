@@ -24,7 +24,7 @@ export const cifras = [
   { valor: '3', texto: 'sistemas propios en producción' },
   { valor: '50', texto: 'docentes usan mi sistema de notas' },
   { valor: '86', texto: 'aulas de Classroom coordinadas' },
-  { valor: '10', texto: 'instituciones y espacios donde trabajé' },
+  { valor: '9', texto: 'instituciones y espacios donde trabajé' },
 ]
 
 export const redes = [
@@ -61,7 +61,7 @@ export const servicios = [
     titulo: 'Tecnología para escuelas',
     texto:
       'Sistemas de notas y boletines, organización de Google Classroom y Workspace, y acompañamiento a docentes para usarlos.',
-    ejemplo: 'Ej.: Gestión de Notas ICES, 86 aulas en ICVL',
+    ejemplo: 'Ej.: Gestión de Notas ICVL Secundaria, 86 aulas de Classroom',
   },
   {
     icono: 'clases',
@@ -99,7 +99,7 @@ export const proyectos = [
     enlaceTexto: 'Conocé al cliente',
   },
   {
-    nombre: 'Gestión de Notas ICES',
+    nombre: 'Gestión de Notas · ICVL Secundaria',
     visual: 'notas', // dibujo de la tarjeta: notas | aulas | colectivo
     destacado: true,
     tipo: 'Institución educativa · 2025',
@@ -156,12 +156,13 @@ export const experiencia = [
     etiquetas: ['Coordinación TIC', 'Google Workspace', 'Arduino', 'Python'],
   },
   {
-    lugar: 'Instituto Cultural y Educativo del Sur',
-    sigla: 'ICES',
-    cargo: 'Docente de secundaria y Desarrollador',
+    lugar: 'Instituto Cristiano Vicente López · Secundaria',
+    sigla: 'ICVL',
+    logo: '/logos/icvl.webp',
+    cargo: 'Desarrollador del sistema de gestión de notas y Docente',
     periodo: '2025 — Actualidad',
     descripcion:
-      'Doy clases en la secundaria y desarrollé el sistema de gestión de notas que hoy usan 50 docentes.',
+      'Desarrollé el software de gestión de notas de la secundaria: ingreso por PIN para cada docente, boletines y guardado automático. Hoy lo usan 50 docentes para las notas de unos 200 alumnos. También doy clases en la secundaria.',
     etiquetas: ['Next.js', 'Supabase', 'Docencia'],
   },
   {
