@@ -23,7 +23,6 @@ import {
   formacion,
   habilidades,
   servicios,
-  personal,
 } from './data.js'
 
 const iconosRedes = { LinkedIn: Linkedin, Instagram }
@@ -431,11 +430,6 @@ export default function App() {
           </div>
         </Seccion>
 
-        {/* 7. FUERA DEL AULA */}
-        <Seccion id="fuera-del-aula" titulo="Fuera del aula">
-          <p className="parrafo">{personal.texto}</p>
-        </Seccion>
-
         {/* 8. CONTACTO */}
         <section id="contacto" className="contacto revelar" aria-labelledby="contacto-titulo">
           <p className="pastilla">Contacto</p>
@@ -468,7 +462,7 @@ export default function App() {
           <span>
             © {new Date().getFullYear()} {perfil.nombre}
           </span>
-          <span>{personal.versiculo}</span>
+          <span>{perfil.marca}</span>
         </div>
       </footer>
     </>

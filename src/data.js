@@ -243,9 +243,3 @@ export const sobreMi = [
   'Empecé dando clases de robótica y computación: chicos desde los 5 años, adolescentes y adultos mayores. Hoy soy docente de informática en primaria y secundaria y coordinador de tecnología en un colegio.',
   'Trabajando en escuelas empecé a desarrollar software para resolver problemas reales de las instituciones, y después para clientes como Los Jazmines Eventos. Hoy busco proyectos de desarrollo de software, seguir aprendiendo y enseñar lo que aprendo.',
 ]
-
-export const personal = {
-  texto:
-    'Casado con Cami. Ministerio y comunidad de fe. La música es mi idioma extra: piano, guitarra y canto. También fútbol los viernes, ajedrez y el mate amargo mientras programo de noche.',
-  versiculo: 'Filipenses 4:13',
-}
