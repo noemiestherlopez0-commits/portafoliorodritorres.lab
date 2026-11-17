@@ -736,6 +736,16 @@ a {
   letter-spacing: -0.035em;
   line-height: 1.1;
 }
+.contacto-mail {
+  margin-top: 1.25rem;
+  font-size: 0.92rem;
+  color: var(--tinta-3);
+}
+.contacto-mail a:hover {
+  color: var(--acento);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .pastilla {
   display: inline-block;
   font-size: 0.8rem;

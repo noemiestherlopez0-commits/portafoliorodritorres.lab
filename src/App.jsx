@@ -202,6 +202,7 @@ function Visual({ tipo }) {
 export default function App() {
   const [oscuro, alternarTema] = useTema()
   useRevelar()
+  const mailto = `mailto:${perfil.email}?subject=${encodeURIComponent('Consulta desde tu portafolio')}`
   const iniciales = perfil.nombre
     .split(' ')
     .map((p) => p[0])
@@ -253,7 +254,7 @@ export default function App() {
               </span>
             </p>
             <div className="acciones aparecer" style={{ animationDelay: '240ms' }}>
-              <a href="#contacto" className="boton boton-principal">
+              <a href={mailto} className="boton boton-principal">
                 <Mail size={16} /> Contame tu proyecto
               </a>
               {redes.map((r) => {
@@ -439,13 +440,16 @@ export default function App() {
             qué necesitás y te respondo a la brevedad.
           </p>
           <div className="acciones acciones-centro">
-            {redes.map((r, i) => {
+            <a href={mailto} className="boton boton-principal">
+              <Mail size={16} /> Escribime un mail
+            </a>
+            {redes.map((r) => {
               const Icono = iconosRedes[r.nombre] || ArrowUpRight
               return (
                 <a
                   key={r.nombre}
                   href={r.url}
-                  className={`boton ${i === 0 ? 'boton-principal' : ''}`}
+                  className="boton"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -454,6 +458,9 @@ export default function App() {
               )
             })}
           </div>
+          <p className="contacto-mail">
+            <a href={mailto}>{perfil.email}</a>
+          </p>
         </section>
       </main>
 

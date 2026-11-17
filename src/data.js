@@ -15,14 +15,15 @@ export const perfil = {
   titulo: 'Desarrollador de software · Docente de tecnología',
   ubicacion: 'Vicente López, Buenos Aires',
   estado: 'Disponible para proyectos · Zona norte o remoto',
+  email: 'rodrigomartintorrres@outlook.com',
   foto: '/rodrigo.jpg', // la foto está en la carpeta public/
 }
 
 // Números destacados (aparecen debajo de la presentación)
 export const cifras = [
   { valor: '3', texto: 'sistemas propios en producción' },
+  { valor: '50', texto: 'docentes usan mi sistema de notas' },
   { valor: '86', texto: 'aulas de Classroom coordinadas' },
-  { valor: '~500', texto: 'alumnos en la plataforma que coordino' },
   { valor: '8', texto: 'instituciones y espacios donde trabajé' },
 ]
 
@@ -105,7 +106,7 @@ export const proyectos = [
       problema: 'La secundaria necesitaba una forma simple y segura de cargar notas y armar boletines.',
       solucion:
         'Desarrollé un sistema con ingreso por PIN para cada docente, boletines automáticos y guardado automático para no perder nada.',
-      resultado: 'En producción en la secundaria: 5 cursos y 2 cuatrimestres.',
+      resultado: 'Lo usan 50 docentes para las notas de unos 200 alumnos de secundaria.',
     },
     tecnologias: ['Next.js', 'Supabase'],
     estado: 'En producción',
@@ -147,9 +148,9 @@ export const experiencia = [
     sigla: 'ICVL',
     logo: '/logos/icvl.webp',
     cargo: 'Coordinador de Tecnologías',
-    periodo: '2024 — Actualidad',
+    periodo: '2024 — 2026',
     descripcion:
-      'Empecé en diversas tareas y hoy coordino la tecnología de la institución: 86 aulas de Google Classroom y unos 500 alumnos.',
+      'Empecé en diversas tareas y terminé como coordinador de tecnología de la institución: 86 aulas de Google Classroom y unos 500 alumnos.',
     etiquetas: ['Google Workspace', 'Coordinación TIC'],
   },
   {
