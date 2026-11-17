@@ -43,6 +43,8 @@ export const logos = [
   { nombre: 'Robótica Martelli', imagen: '/logos/martelli.webp', oscuro: true },
   { nombre: 'Potrero Digital', imagen: '/logos/potrero.webp', oscuro: true },
   { nombre: 'Steigen Laboratorio Farmacéutico', imagen: '/logos/steigen.webp' },
+  { nombre: 'Colegio Cristiano de Martínez', imagen: '/logos/ccm.webp' },
+  { nombre: 'Centro Comunitario Renuevo', imagen: '/logos/renuevo.webp' },
 ]
 
 // Qué le podés resolver a quien te contrata
@@ -202,8 +204,9 @@ export const experiencia = [
     etiquetas: ['Robótica', 'Arduino', 'Cooperativa'],
   },
   {
-    lugar: 'Colegio CCM',
+    lugar: 'Colegio Cristiano de Martínez (CCM)',
     sigla: 'CCM',
+    logo: '/logos/ccm.webp',
     cargo: 'Suplencia TIC en primaria',
     periodo: 'May — Oct 2024',
     descripcion: 'Animaciones con Scratch Jr. y uso de Word y Excel con alumnos de primaria.',
@@ -212,6 +215,7 @@ export const experiencia = [
   {
     lugar: 'Centro Comunitario Renuevo',
     sigla: 'CCR',
+    logo: '/logos/renuevo.webp',
     cargo: 'Educador',
     periodo: '2022 — 2024',
     descripcion:
@@ -234,7 +238,7 @@ export const experiencia = [
     logoOscuro: true,
     cargo: 'Docente de Computación y Técnico en Electrónica',
     periodo: '2021',
-    descripcion: 'Clases de computación para adultos mayores y reparación de equipos electrónicos.',
+    descripcion: 'Clases de computación para adultos mayores.',
     etiquetas: ['Adultos mayores', 'Electrónica'],
   },
 ]
