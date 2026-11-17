@@ -24,7 +24,7 @@ export const cifras = [
   { valor: '3', texto: 'sistemas propios en producción' },
   { valor: '50', texto: 'docentes usan mi sistema de notas' },
   { valor: '86', texto: 'aulas de Classroom coordinadas' },
-  { valor: '8', texto: 'instituciones y espacios donde trabajé' },
+  { valor: '10', texto: 'instituciones y espacios donde trabajé' },
 ]
 
 export const redes = [
@@ -147,11 +147,11 @@ export const experiencia = [
     lugar: 'Instituto Cristiano Vicente López',
     sigla: 'ICVL',
     logo: '/logos/icvl.webp',
-    cargo: 'Coordinador de Tecnologías',
+    cargo: 'Coordinador de Tecnologías y Docente de Talleres',
     periodo: '2024 — 2026',
     descripcion:
-      'Empecé en diversas tareas y terminé como coordinador de tecnología de la institución: 86 aulas de Google Classroom y unos 500 alumnos.',
-    etiquetas: ['Google Workspace', 'Coordinación TIC'],
+      'Talleres de programación (HTML, CSS, Python y Excel), diseño multimedial y robótica con Arduino en secundaria; Scratch, Google Workspace y robótica con Rasti en primaria y nivel inicial. Terminé como coordinador de tecnología: 86 aulas de Google Classroom y unos 500 alumnos.',
+    etiquetas: ['Coordinación TIC', 'Google Workspace', 'Arduino', 'Python'],
   },
   {
     lugar: 'Instituto Cultural y Educativo del Sur',
@@ -159,17 +159,18 @@ export const experiencia = [
     cargo: 'Docente de secundaria y Desarrollador',
     periodo: '2025 — Actualidad',
     descripcion:
-      'Doy clases en la secundaria y desarrollé el sistema de gestión de notas de la institución.',
+      'Doy clases en la secundaria y desarrollé el sistema de gestión de notas que hoy usan 50 docentes.',
     etiquetas: ['Next.js', 'Supabase', 'Docencia'],
   },
   {
     lugar: 'Colegio Jesús en el Huerto de los Olivos',
     sigla: 'CJH',
     logo: '/logos/huerto.webp',
-    cargo: 'Docente de Informática',
-    periodo: '2025 — Actualidad',
-    descripcion: 'Primaria (5.º y 6.º grado) y, desde 2026, 1.er año de secundaria.',
-    etiquetas: ['Informática', 'Programación'],
+    cargo: 'Docente TIC',
+    periodo: '2024 — Actualidad',
+    descripcion:
+      'Primaria (5.º y 6.º grado) y, desde 2026, 1.er año de secundaria. Google Workspace en la sala de computación y "hora técnica" en el aula sobre ciudadanía digital, recursos educativos e IA aplicada.',
+    etiquetas: ['Google Workspace', 'Ciudadanía digital', 'IA'],
   },
   {
     lugar: 'Potrero Digital',
@@ -177,7 +178,7 @@ export const experiencia = [
     logo: '/logos/potrero.webp',
     logoOscuro: true,
     cargo: 'Docente de Ciudadanía Digital',
-    periodo: 'Actualidad',
+    periodo: '2024 — Actualidad',
     descripcion: 'Clases remotas, en vivo y asincrónicas, sobre ciudadanía digital.',
     etiquetas: ['Educación remota', 'Ciudadanía digital'],
   },
@@ -195,10 +196,36 @@ export const experiencia = [
     sigla: 'ECD',
     logo: '/logos/despacio.webp',
     cargo: 'Cofundador y Tallerista de Robótica',
-    periodo: '',
+    periodo: '2025',
     descripcion:
       'Cooperativa que formé junto con otros talleristas. Di talleres de robótica para chicos y adolescentes de 5 a 17 años.',
     etiquetas: ['Robótica', 'Arduino', 'Cooperativa'],
+  },
+  {
+    lugar: 'Colegio CCM',
+    sigla: 'CCM',
+    cargo: 'Suplencia TIC en primaria',
+    periodo: 'May — Oct 2024',
+    descripcion: 'Animaciones con Scratch Jr. y uso de Word y Excel con alumnos de primaria.',
+    etiquetas: ['Scratch Jr.', 'Primaria'],
+  },
+  {
+    lugar: 'Centro Comunitario Renuevo',
+    sigla: 'CCR',
+    cargo: 'Educador',
+    periodo: '2022 — 2024',
+    descripcion:
+      'Clases de inglés y lengua para secundaria, seguimiento personalizado para sostener la continuidad educativa y coorganización de talleres y eventos.',
+    etiquetas: ['Secundaria', 'Acompañamiento'],
+  },
+  {
+    lugar: 'Steigen Laboratorio Farmacéutico',
+    sigla: 'ST',
+    logo: '/logos/steigen.webp',
+    cargo: 'Técnico en Electrónica',
+    periodo: '',
+    descripcion: 'Reparación de componentes electrónicos y mantenimiento de equipos de laboratorio.',
+    etiquetas: ['Electrónica', 'Mantenimiento'],
   },
   {
     lugar: 'Robótica Martelli',
@@ -214,21 +241,49 @@ export const experiencia = [
 
 export const formacion = [
   {
-    titulo: 'Profesorado de Informática',
+    titulo: 'Profesorado de Educación Secundaria en Informática',
     lugar: 'CONSUDEC V-5',
     sigla: 'CO',
-    periodo: 'En curso · 2.º año',
+    periodo: 'En curso',
+  },
+  {
+    titulo: 'Web Basics y Senior Tracks: HTML5, CSS3, Grid, Flexbox, Figma y GitHub',
+    lugar: 'Digital House',
+    sigla: 'DH',
+    periodo: '2025',
+  },
+  {
+    titulo: 'Estrategias didácticas con Scratch',
+    lugar: 'UTN',
+    sigla: 'UTN',
+    periodo: '2024',
+  },
+  {
+    titulo: 'Robótica educativa: Python, PSeInt, Scratch y electrónica básica',
+    lugar: 'UTN',
+    sigla: 'UTN',
+    periodo: '2024',
+  },
+  {
+    titulo: 'Front End Developer: HTML, CSS, JavaScript, Bootstrap y Figma',
+    lugar: 'Coderhouse',
+    sigla: 'CH',
+    periodo: '2022 — 2023',
   },
 ]
 
 export const habilidades = [
   {
     grupo: 'Desarrollo',
-    items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Drizzle ORM', 'Vercel', 'GitHub', 'v0'],
+    items: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Supabase', 'Python', 'Vercel', 'GitHub', 'Figma'],
   },
   {
     grupo: 'Educación y robótica',
-    items: ['Google Workspace', 'Google Classroom', 'Arduino', 'ZUM Core 2.0', 'Scratch', 'Rasti'],
+    items: ['Google Workspace', 'Google Classroom', 'Arduino', 'Bitbloc', 'ZUM Core 2.0', 'Scratch', 'PSeInt', 'Rasti'],
+  },
+  {
+    grupo: 'Diseño y multimedia',
+    items: ['Canva', 'Inkscape', 'CapCut'],
   },
   {
     grupo: 'IA y productividad',
@@ -241,6 +296,6 @@ export const habilidades = [
 ]
 
 export const sobreMi = [
-  'Empecé dando clases de robótica y computación: chicos desde los 5 años, adolescentes y adultos mayores. Hoy soy docente de informática en primaria y secundaria y coordinador de tecnología en un colegio.',
+  'Empecé dando clases de robótica y computación: chicos desde los 5 años, adolescentes y adultos mayores. Hoy soy docente de informática en primaria y secundaria y coordinador de tecnología en un colegio. Trabajo con un enfoque STEAM: combino disciplinas para resolver problemas reales y busco que cada estudiante se sienta valorado y con ganas de aprender.',
   'Trabajando en escuelas empecé a desarrollar software para resolver problemas reales de las instituciones, y después para clientes como Los Jazmines Eventos. Hoy busco proyectos de desarrollo de software, seguir aprendiendo y enseñar lo que aprendo.',
 ]
