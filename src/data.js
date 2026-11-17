@@ -15,7 +15,7 @@ export const perfil = {
   titulo: 'Desarrollador de software · Docente de tecnología',
   ubicacion: 'Vicente López, Buenos Aires',
   estado: 'Disponible para proyectos · Zona norte o remoto',
-  email: 'rodrigomartintorrres@outlook.com',
+  email: 'rodrigomartintorres@outlook.com',
   foto: '/rodrigo.jpg', // la foto está en la carpeta public/
 }
 
