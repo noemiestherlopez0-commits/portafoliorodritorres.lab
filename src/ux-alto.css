@@ -1,0 +1,43 @@
+/* ═══ Inicio que se adapta al alto de la ventana (computadoras) ═══
+   Todo el bloque de presentación (saludo, título, texto, botones y
+   "Disponible") entra en la primera pantalla, aunque la ventana sea baja. */
+@media (min-width: 860px) {
+  .presentacion {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    padding-top: clamp(1.5rem, 6vh, 5.5rem);
+  }
+  .presentacion .avatar-grande {
+    justify-self: center;
+    width: clamp(10rem, 36vh, 17rem);
+    height: clamp(10rem, 36vh, 17rem);
+  }
+  .presentacion .avatar-estado {
+    right: 9%;
+    bottom: 9%;
+  }
+  .saludo {
+    margin-bottom: clamp(0.4rem, 1.2vh, 0.75rem);
+  }
+  .presentacion h1 {
+    font-size: clamp(2.1rem, min(4.2vw, 7.4vh), 3.6rem);
+    max-width: 20ch;
+  }
+  .frase {
+    font-size: clamp(1rem, min(1.6vw, 2.9vh), 1.3rem);
+    margin-top: clamp(0.6rem, 1.8vh, 1rem);
+    max-width: 46ch;
+  }
+  .datos {
+    margin-top: clamp(0.5rem, 1.6vh, 1rem);
+  }
+  .presentacion .acciones {
+    margin-top: clamp(1rem, 2.6vh, 1.5rem);
+  }
+  .estado-linea {
+    margin-top: clamp(0.9rem, 2.6vh, 1.5rem);
+  }
+  .cifras {
+    margin-top: clamp(1.25rem, 3vh, 2rem);
+  }
+}
