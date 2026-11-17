@@ -1,5 +1,17 @@
 import { useEffect, useState } from 'react'
-import { ArrowUpRight, Instagram, Linkedin, Mail, MapPin, Moon, Sun } from 'lucide-react'
+import {
+  ArrowUpRight,
+  Code2,
+  GraduationCap,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Moon,
+  Quote,
+  School,
+  Sun,
+} from 'lucide-react'
 import {
   perfil,
   sobreMi,
@@ -10,11 +22,12 @@ import {
   proyectos,
   formacion,
   habilidades,
-  disponible,
+  servicios,
   personal,
 } from './data.js'
 
 const iconosRedes = { LinkedIn: Linkedin, Instagram }
+const iconosServicios = { codigo: Code2, escuela: School, clases: GraduationCap }
 
 /* ── Tema claro / oscuro ─────────────────────────────── */
 function useTema() {
@@ -91,10 +104,10 @@ function Etiquetas({ items }) {
 }
 
 /* Fila tipo currículum: logo, nombre, cargo y fechas */
-function Fila({ sigla, logo, titulo, subtitulo, periodo, descripcion, etiquetas }) {
+function Fila({ sigla, logo, logoOscuro, titulo, subtitulo, periodo, descripcion, etiquetas }) {
   return (
     <li className="fila">
-      <span className={`logo ${logo ? 'logo-imagen' : ''}`} aria-hidden="true">
+      <span className={`logo ${logo ? 'logo-imagen' : ''} ${logoOscuro ? 'logo-oscuro' : ''}`} aria-hidden="true">
         {logo ? <img src={logo} alt="" loading="lazy" /> : sigla}
       </span>
       <div className="fila-cuerpo">
@@ -207,9 +220,9 @@ export default function App() {
             {perfil.marca}
           </a>
           <nav aria-label="Secciones">
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#experiencia">Experiencia</a>
+            <a href="#servicios">Servicios</a>
             <a href="#proyectos">Proyectos</a>
+            <a href="#experiencia">Experiencia</a>
             <a href="#contacto">Contacto</a>
           </nav>
           <button
@@ -227,9 +240,12 @@ export default function App() {
         {/* 1. PRESENTACIÓN */}
         <section id="inicio" className="presentacion">
           <div className="presentacion-texto">
-            <h1 className="aparecer">Hola, soy {perfil.nombreCorto} 👋</h1>
-            <p className="frase aparecer" style={{ animationDelay: '80ms' }}>
-              {perfil.frase}
+            <p className="saludo aparecer">Hola, soy {perfil.nombre} 👋</p>
+            <h1 className="aparecer" style={{ animationDelay: '60ms' }}>
+              {perfil.titular}
+            </h1>
+            <p className="frase aparecer" style={{ animationDelay: '120ms' }}>
+              {perfil.bajada}
             </p>
             <p className="datos aparecer" style={{ animationDelay: '160ms' }}>
               <span>{perfil.titulo}</span>
@@ -239,7 +255,7 @@ export default function App() {
             </p>
             <div className="acciones aparecer" style={{ animationDelay: '240ms' }}>
               <a href="#contacto" className="boton boton-principal">
-                <Mail size={16} /> Contactame
+                <Mail size={16} /> Contame tu proyecto
               </a>
               {redes.map((r) => {
                 const Icono = iconosRedes[r.nombre] || ArrowUpRight
@@ -272,6 +288,15 @@ export default function App() {
           {perfil.estado}
         </p>
 
+        <dl className="cifras aparecer" style={{ animationDelay: '340ms' }}>
+          {cifras.map((c) => (
+            <div key={c.texto}>
+              <dt>{c.valor}</dt>
+              <dd>{c.texto}</dd>
+            </div>
+          ))}
+        </dl>
+
         {/* CARRUSEL DE LOGOS */}
         <section className="carrusel-seccion aparecer" style={{ animationDelay: '360ms' }} aria-labelledby="donde-titulo">
           <p id="donde-titulo" className="carrusel-titulo">
@@ -280,42 +305,26 @@ export default function App() {
           <Carrusel />
         </section>
 
-        {/* 2. SOBRE MÍ */}
-        <Seccion id="sobre-mi" titulo="Sobre mí">
-          {sobreMi.map((p) => (
-            <p key={p.slice(0, 20)} className="parrafo">
-              {p}
-            </p>
-          ))}
-          <dl className="cifras">
-            {cifras.map((c) => (
-              <div key={c.texto}>
-                <dt>{c.valor}</dt>
-                <dd>{c.texto}</dd>
-              </div>
-            ))}
-          </dl>
+        {/* SERVICIOS */}
+        <Seccion id="servicios" titulo="Cómo puedo ayudarte">
+          <div className="servicios">
+            {servicios.map((sv) => {
+              const Icono = iconosServicios[sv.icono] || Code2
+              return (
+                <article key={sv.titulo} className="servicio">
+                  <span className="servicio-icono" aria-hidden="true">
+                    <Icono size={18} />
+                  </span>
+                  <h3>{sv.titulo}</h3>
+                  <p>{sv.texto}</p>
+                  <p className="servicio-ejemplo">{sv.ejemplo}</p>
+                </article>
+              )
+            })}
+          </div>
         </Seccion>
 
-        {/* 3. EXPERIENCIA */}
-        <Seccion id="experiencia" titulo="Experiencia">
-          <ul className="filas">
-            {experiencia.map((e) => (
-              <Fila
-                key={e.lugar}
-                sigla={e.sigla}
-                logo={e.logo}
-                titulo={e.lugar}
-                subtitulo={e.cargo}
-                periodo={e.periodo}
-                descripcion={e.descripcion}
-                etiquetas={e.etiquetas}
-              />
-            ))}
-          </ul>
-        </Seccion>
-
-        {/* 4. PROYECTOS */}
+        {/* PROYECTOS */}
         <Seccion id="proyectos" titulo="Proyectos">
           <p className="parrafo">
             Sistemas reales, hechos para resolver problemas concretos de instituciones y empresas.
@@ -336,7 +345,31 @@ export default function App() {
                     {p.estado}
                   </span>
                   <h3>{p.nombre}</h3>
+                  {p.tipo && <p className="proyecto-tipo">{p.tipo}</p>}
                   <p>{p.texto}</p>
+                  {p.caso && (
+                    <dl className="caso">
+                      <div>
+                        <dt>El problema</dt>
+                        <dd>{p.caso.problema}</dd>
+                      </div>
+                      <div>
+                        <dt>Qué hice</dt>
+                        <dd>{p.caso.solucion}</dd>
+                      </div>
+                      <div>
+                        <dt>Resultado</dt>
+                        <dd>{p.caso.resultado}</dd>
+                      </div>
+                    </dl>
+                  )}
+                  {p.testimonio && (
+                    <figure className="testimonio">
+                      <Quote size={18} aria-hidden="true" />
+                      <blockquote>“{p.testimonio.texto}”</blockquote>
+                      <figcaption>— {p.testimonio.autor}</figcaption>
+                    </figure>
+                  )}
                   <Etiquetas items={p.tecnologias} />
                   {p.enlace && (
                     <a className="enlace" href={p.enlace} target="_blank" rel="noopener noreferrer">
@@ -349,7 +382,35 @@ export default function App() {
           </div>
         </Seccion>
 
-        {/* 5. EDUCACIÓN */}
+        {/* 3. EXPERIENCIA */}
+        <Seccion id="experiencia" titulo="Experiencia">
+          <ul className="filas">
+            {experiencia.map((e) => (
+              <Fila
+                key={e.lugar}
+                sigla={e.sigla}
+                logo={e.logo}
+                logoOscuro={e.logoOscuro}
+                titulo={e.lugar}
+                subtitulo={e.cargo}
+                periodo={e.periodo}
+                descripcion={e.descripcion}
+                etiquetas={e.etiquetas}
+              />
+            ))}
+          </ul>
+        </Seccion>
+
+        {/* SOBRE MÍ */}
+        <Seccion id="sobre-mi" titulo="Sobre mí">
+          {sobreMi.map((p) => (
+            <p key={p.slice(0, 20)} className="parrafo">
+              {p}
+            </p>
+          ))}
+        </Seccion>
+
+        {/* EDUCACIÓN */}
         <Seccion id="educacion" titulo="Educación">
           <ul className="filas">
             {formacion.map((f) => (
@@ -378,10 +439,10 @@ export default function App() {
         {/* 8. CONTACTO */}
         <section id="contacto" className="contacto revelar" aria-labelledby="contacto-titulo">
           <p className="pastilla">Contacto</p>
-          <h2 id="contacto-titulo">Hablemos</h2>
+          <h2 id="contacto-titulo">Hablemos de tu proyecto</h2>
           <p className="parrafo">
-            Estoy disponible para {disponible.slice(0, -1).join(', ')} y {disponible[disponible.length - 1]}.
-            Escribime y te respondo a la brevedad.
+            ¿Tenés un proyecto, una escuela que quiere ordenar su tecnología o un taller para dar? Contame
+            qué necesitás y te respondo a la brevedad.
           </p>
           <div className="acciones acciones-centro">
             {redes.map((r, i) => {

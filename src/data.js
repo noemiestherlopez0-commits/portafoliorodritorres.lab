@@ -8,23 +8,22 @@ export const perfil = {
   nombre: 'Rodrigo Torres',
   nombreCorto: 'Rodrigo',
   marca: 'rodritorres.lab',
-  titulo: 'Docente · Dev Fullstack · Coordinador TIC',
-  frase: 'Construyo tecnología educativa que funciona en el aula real.',
+  // Titular: lo primero que lee quien te puede contratar
+  titular: 'Desarrollo software a medida para escuelas y pymes.',
+  bajada:
+    'Soy docente y coordinador de tecnología. Conozco por dentro cómo funcionan una escuela y una organización, y construyo herramientas que la gente usa todos los días.',
+  titulo: 'Desarrollador de software · Docente de tecnología',
   ubicacion: 'Vicente López, Buenos Aires',
-  estado: 'Abierto a oportunidades remotas',
+  estado: 'Disponible para proyectos · Zona norte o remoto',
   foto: '/rodrigo.jpg', // la foto está en la carpeta public/
 }
 
-export const sobreMi = [
-  'Soy docente de robótica y programación, coordinador TIC y desarrollador fullstack. Trabajo en el cruce entre la educación y el software: enseño en el aula, acompaño a otros docentes a usar la tecnología y construyo los sistemas que las instituciones necesitan para funcionar.',
-  'Desarrollo con Next.js, React y Supabase, y llevo las ideas del prototipo a producción. Hoy mis sistemas los usan docentes, estudiantes y empresas todos los días.',
-]
-
-// Números destacados (aparecen debajo de "Sobre mí")
+// Números destacados (aparecen debajo de la presentación)
 export const cifras = [
-  { valor: '86', texto: 'aulas de Classroom administradas' },
-  { valor: '5', texto: 'instituciones y espacios educativos' },
   { valor: '3', texto: 'sistemas propios en producción' },
+  { valor: '86', texto: 'aulas de Classroom coordinadas' },
+  { valor: '~500', texto: 'alumnos en la plataforma que coordino' },
+  { valor: '8', texto: 'instituciones y espacios donde trabajé' },
 ]
 
 export const redes = [
@@ -32,12 +31,12 @@ export const redes = [
   { nombre: 'Instagram', url: 'https://www.instagram.com/rodritorres.lab' },
 ]
 
-// Logos que pasan en el carrusel "Dónde trabajé" (las imágenes están en public/logos/)
+// Logos que pasan en el carrusel (las imágenes están en public/logos/)
 // oscuro: true → para logos con fondo negro
 export const logos = [
   { nombre: 'Instituto Cristiano Vicente López', imagen: '/logos/icvl.webp' },
   { nombre: 'Colegio Jesús en el Huerto de los Olivos', imagen: '/logos/huerto.webp' },
-  { nombre: 'Potrero Digital · Picadito', imagen: '/logos/picadito.webp' },
+  { nombre: 'Picadito Digital', imagen: '/logos/picadito.webp' },
   { nombre: 'Patronato de la Infancia', imagen: '/logos/patronato.webp' },
   { nombre: 'Espacio Cultural Despacio', imagen: '/logos/despacio.webp' },
   { nombre: 'Robótica Martelli', imagen: '/logos/martelli.webp', oscuro: true },
@@ -45,111 +44,170 @@ export const logos = [
   { nombre: 'Steigen Laboratorio Farmacéutico', imagen: '/logos/steigen.webp' },
 ]
 
-// periodo: escribí las fechas, por ejemplo '2023 — Actualidad'
-export const experiencia = [
+// Qué le podés resolver a quien te contrata
+export const servicios = [
   {
-    lugar: 'Instituto Cultural y Educativo del Sur',
-    sigla: 'ICES',
-    cargo: 'Director TIC y Desarrollador',
-    periodo: '',
-    descripcion:
-      'Dirijo el área de tecnología del instituto. Diseñé y desarrollé su sistema propio de gestión de notas, que hoy está en producción.',
-    etiquetas: ['Next.js', 'Supabase', 'Gestión TIC'],
+    icono: 'codigo',
+    titulo: 'Software a medida para pymes',
+    texto:
+      'Sistemas de gestión, cotizadores online y paneles para ordenar el día a día de un negocio. Del primer boceto a la versión que se usa todos los días.',
+    ejemplo: 'Ej.: Sistema Los Jazmines Eventos, Petra',
   },
   {
-    lugar: 'Instituto Cristiano Vicente López',
-    sigla: 'ICVL',
-    logo: '/logos/icvl.webp',
-    cargo: 'Líder TIC y Docente',
-    periodo: '',
-    descripcion: 'Lidero el área TIC de la institución y doy clases.',
-    etiquetas: ['Google Workspace', 'Docencia'],
+    icono: 'escuela',
+    titulo: 'Tecnología para escuelas',
+    texto:
+      'Sistemas de notas y boletines, organización de Google Classroom y Workspace, y acompañamiento a docentes para usarlos.',
+    ejemplo: 'Ej.: Gestión de Notas ICES, 86 aulas en ICVL',
   },
   {
-    lugar: 'Colegio Jesús en el Huerto de los Olivos',
-    sigla: 'CJH',
-    logo: '/logos/huerto.webp',
-    cargo: 'Docente de Informática',
-    periodo: '',
-    descripcion: '',
-    etiquetas: ['Informática', 'Programación'],
-  },
-  {
-    lugar: 'Potrero Digital · Picadito',
-    sigla: 'PD',
-    logo: '/logos/picadito.webp',
-    cargo: 'Tutor',
-    periodo: '',
-    descripcion: 'Capacitación docente en TIC.',
-    etiquetas: ['Capacitación docente'],
-  },
-  {
-    lugar: 'Patronato de la Infancia',
-    sigla: 'PI',
-    logo: '/logos/patronato.webp',
-    cargo: '', // ← completar: ¿qué rol tuviste acá?
-    periodo: '',
-    descripcion: '',
-    etiquetas: [],
-  },
-  {
-    lugar: 'Espacio Cultural Despacio',
-    sigla: 'ECD',
-    logo: '/logos/despacio.webp',
-    cargo: 'Taller de Robótica',
-    periodo: '',
-    descripcion: '',
-    etiquetas: ['Robótica', 'Arduino'],
+    icono: 'clases',
+    titulo: 'Clases y talleres',
+    texto:
+      'Programación, robótica, computación y ciudadanía digital. Presencial o remoto, para chicos desde los 5 años, adolescentes y adultos mayores.',
+    ejemplo: 'Ej.: Huerto de los Olivos, Picadito Digital, Despacio',
   },
 ]
 
 // imagen: captura del proyecto (en public/proyectos/). Si no hay, se usa el dibujo de "visual".
-// destacado: true → la tarjeta ocupa todo el ancho.
+// destacado: true → la tarjeta ocupa todo el ancho y muestra el caso completo.
+// caso: problema / qué hice / resultado. testimonio: frase de un cliente.
 export const proyectos = [
   {
     nombre: 'Sistema Los Jazmines Eventos',
     imagen: '/proyectos/jazmines.webp',
     destacado: true,
-    texto:
-      'Software de gestión a medida para un salón de eventos: eventos, calendario, vendedores, cotizaciones, cobro de cuotas, cajas, almacén, producción, recetas y finanzas. Genera contratos y avisa quién tiene que pagar.',
+    tipo: 'Cliente · 2026',
+    texto: 'Software de gestión a medida para un salón de eventos.',
+    caso: {
+      problema:
+        'Un salón de eventos necesitaba tener en un solo lugar sus eventos, cotizaciones, cobros, cajas, compras y producción.',
+      solucion:
+        'Diseñé y desarrollé un sistema completo: calendario, vendedores, cotizaciones, cobro de cuotas, cajas, almacén, recetas y finanzas, con generación de contratos y aviso de quién tiene que pagar.',
+      resultado: 'Se usa todos los días para gestionar los eventos del salón.',
+    },
+    testimonio: {
+      texto: 'Es el sistema que me solucionó la vida para la gestión de eventos.',
+      autor: 'Diego · Los Jazmines Eventos',
+    },
     tecnologias: ['React', 'Supabase', 'Vercel'],
     estado: 'En producción',
     enlace: 'https://www.instagram.com/losjazmines.eventos/',
     enlaceTexto: 'Conocé al cliente',
   },
   {
+    nombre: 'Gestión de Notas ICES',
+    visual: 'notas', // dibujo de la tarjeta: notas | aulas | colectivo
+    destacado: true,
+    tipo: 'Institución educativa · 2025',
+    texto: 'Sistema propio de calificaciones para la secundaria.',
+    caso: {
+      problema: 'La secundaria necesitaba una forma simple y segura de cargar notas y armar boletines.',
+      solucion:
+        'Desarrollé un sistema con ingreso por PIN para cada docente, boletines automáticos y guardado automático para no perder nada.',
+      resultado: 'En producción en la secundaria: 5 cursos y 2 cuatrimestres.',
+    },
+    tecnologias: ['Next.js', 'Supabase'],
+    estado: 'En producción',
+  },
+  {
     nombre: 'Petra · Cotizador para eventos',
     imagen: '/proyectos/petra.webp',
     destacado: true,
+    tipo: 'Producto propio',
     texto:
-      'Producto propio. Un link donde el cliente arma su evento y ve el precio al instante, las 24 horas. Al salón le llega el pedido por WhatsApp. Gratis para empezar y con la marca de cada salón.',
+      'Un link donde el cliente de un salón arma su evento y ve el precio al instante, las 24 horas. Al salón le llega el pedido por WhatsApp.',
     tecnologias: ['Producto SaaS', 'Vercel'],
     estado: 'En producción',
     enlace: 'https://www.petraeventos.com/',
     enlaceTexto: 'Visitar petraeventos.com',
   },
   {
-    nombre: 'Gestión de Notas ICES',
-    visual: 'notas', // dibujo de la tarjeta: notas | agenda | aulas | colectivo
-    texto:
-      'Sistema completo de calificaciones: login por PIN, boletines y guardado automático. 5 cursos, 2 cuatrimestres.',
-    tecnologias: ['Next.js', 'Supabase'],
-    estado: 'En producción',
-  },
-  {
-    nombre: 'Classroom ×86',
+    nombre: 'Classroom ICVL',
     visual: 'aulas',
-    texto:
-      'Arquitectura y administración completa de Google Classroom institucional, armado desde cero.',
+    tipo: 'Coordinación TIC',
+    texto: 'Organización y administración de 86 aulas de Google Classroom para unos 500 alumnos.',
     tecnologias: ['Google Workspace'],
     estado: 'Activo',
   },
   {
     nombre: 'El Colectivo',
     visual: 'colectivo',
+    tipo: 'Proyecto propio',
     texto: 'App web gamificada (PWA) con temática de colectivo porteño.',
     tecnologias: ['React', 'Vite', 'Canvas', 'Tailwind'],
     estado: 'Prototipo',
+  },
+]
+
+// periodo: por ejemplo '2024 — Actualidad'
+export const experiencia = [
+  {
+    lugar: 'Instituto Cristiano Vicente López',
+    sigla: 'ICVL',
+    logo: '/logos/icvl.webp',
+    cargo: 'Coordinador de Tecnologías',
+    periodo: '2024 — Actualidad',
+    descripcion:
+      'Empecé en diversas tareas y hoy coordino la tecnología de la institución: 86 aulas de Google Classroom y unos 500 alumnos.',
+    etiquetas: ['Google Workspace', 'Coordinación TIC'],
+  },
+  {
+    lugar: 'Instituto Cultural y Educativo del Sur',
+    sigla: 'ICES',
+    cargo: 'Docente de secundaria y Desarrollador',
+    periodo: '2025 — Actualidad',
+    descripcion:
+      'Doy clases en la secundaria y desarrollé el sistema de gestión de notas de la institución.',
+    etiquetas: ['Next.js', 'Supabase', 'Docencia'],
+  },
+  {
+    lugar: 'Colegio Jesús en el Huerto de los Olivos',
+    sigla: 'CJH',
+    logo: '/logos/huerto.webp',
+    cargo: 'Docente de Informática',
+    periodo: '2025 — Actualidad',
+    descripcion: 'Primaria (5.º y 6.º grado) y, desde 2026, 1.er año de secundaria.',
+    etiquetas: ['Informática', 'Programación'],
+  },
+  {
+    lugar: 'Potrero Digital',
+    sigla: 'PD',
+    logo: '/logos/potrero.webp',
+    logoOscuro: true,
+    cargo: 'Docente de Ciudadanía Digital',
+    periodo: 'Actualidad',
+    descripcion: 'Clases remotas, en vivo y asincrónicas, sobre ciudadanía digital.',
+    etiquetas: ['Educación remota', 'Ciudadanía digital'],
+  },
+  {
+    lugar: 'Patronato de la Infancia · Picadito Digital',
+    sigla: 'PI',
+    logo: '/logos/patronato.webp',
+    cargo: 'Docente de Programación',
+    periodo: '',
+    descripcion: 'Clases de programación para chicos de 4.º a 7.º grado.',
+    etiquetas: ['Programación', 'Primaria'],
+  },
+  {
+    lugar: 'Espacio Cultural Despacio',
+    sigla: 'ECD',
+    logo: '/logos/despacio.webp',
+    cargo: 'Cofundador y Tallerista de Robótica',
+    periodo: '',
+    descripcion:
+      'Cooperativa que formé junto con otros talleristas. Di talleres de robótica para chicos y adolescentes de 5 a 17 años.',
+    etiquetas: ['Robótica', 'Arduino', 'Cooperativa'],
+  },
+  {
+    lugar: 'Robótica Martelli',
+    sigla: 'RM',
+    logo: '/logos/martelli.webp',
+    logoOscuro: true,
+    cargo: 'Docente de Computación y Técnico en Electrónica',
+    periodo: '2021',
+    descripcion: 'Clases de computación para adultos mayores y reparación de equipos electrónicos.',
+    etiquetas: ['Adultos mayores', 'Electrónica'],
   },
 ]
 
@@ -169,15 +227,22 @@ export const habilidades = [
   },
   {
     grupo: 'Educación y robótica',
-    items: ['Google Workspace', 'Arduino', 'ZUM Core 2.0', 'Scratch', 'Rasti', 'Potrero Digital'],
+    items: ['Google Workspace', 'Google Classroom', 'Arduino', 'ZUM Core 2.0', 'Scratch', 'Rasti'],
   },
   {
     grupo: 'IA y productividad',
     items: ['Claude', 'Cursor', 'Vercel AI SDK'],
   },
+  {
+    grupo: 'Idiomas',
+    items: ['Español (nativo)', 'Inglés (básico)'],
+  },
 ]
 
-export const disponible = ['Coordinación TIC', 'Desarrollo a medida', 'Capacitación docente']
+export const sobreMi = [
+  'Empecé dando clases de robótica y computación: chicos desde los 5 años, adolescentes y adultos mayores. Hoy soy docente de informática en primaria y secundaria y coordinador de tecnología en un colegio.',
+  'Trabajando en escuelas empecé a desarrollar software para resolver problemas reales de las instituciones, y después para clientes como Los Jazmines Eventos. Hoy busco proyectos de desarrollo de software, seguir aprendiendo y enseñar lo que aprendo.',
+]
 
 export const personal = {
   texto:
