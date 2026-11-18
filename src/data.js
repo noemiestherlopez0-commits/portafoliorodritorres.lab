@@ -12,7 +12,7 @@ export const perfil = {
   titular: 'Desarrollo software a medida para escuelas y pymes.',
   bajada:
     'Soy docente y coordinador de tecnología. Conozco por dentro cómo funcionan una escuela y una organización, y construyo herramientas que la gente usa todos los días.',
-  titulo: 'Desarrollador de software · Docente de tecnología',
+  titulo: 'Vibecoder fullstack · Docente de tecnología',
   ubicacion: 'Vicente López, Buenos Aires',
   estado: 'Disponible para proyectos · Zona norte o remoto',
   email: 'rodrigomartintorres@outlook.com',
@@ -93,7 +93,7 @@ export const proyectos = [
       texto: 'Es el sistema que me solucionó la vida para la gestión de eventos.',
       autor: 'Diego · Los Jazmines Eventos',
     },
-    tecnologias: ['React', 'Supabase', 'Vercel'],
+    tecnologias: ['Claude', 'React', 'Supabase', 'Vercel'],
     estado: 'En producción',
     enlace: 'https://www.instagram.com/losjazmines.eventos/',
     enlaceTexto: 'Conocé al cliente',
@@ -110,7 +110,7 @@ export const proyectos = [
         'Desarrollé un sistema con ingreso por PIN para cada docente, boletines automáticos y guardado automático para no perder nada.',
       resultado: 'Lo usan 50 docentes para las notas de unos 200 alumnos de secundaria.',
     },
-    tecnologias: ['Next.js', 'Supabase'],
+    tecnologias: ['Claude', 'Next.js', 'Supabase'],
     estado: 'En producción',
   },
   {
@@ -126,7 +126,7 @@ export const proyectos = [
         'Desarrollé un sistema con horario semanal por institución, cursos, alumnos, planificaciones y notas, con anotaciones sobre el desempeño de cada alumno y opción de exportar.',
       resultado: 'Lo uso a diario para organizar mis clases y el seguimiento de mis alumnos.',
     },
-    tecnologias: [],
+    tecnologias: ['Claude'],
     estado: 'En uso',
   },
   {
@@ -136,7 +136,7 @@ export const proyectos = [
     tipo: 'Producto propio',
     texto:
       'Un link donde el cliente de un salón arma su evento y ve el precio al instante, las 24 horas. Al salón le llega el pedido por WhatsApp.',
-    tecnologias: ['Producto SaaS', 'Vercel'],
+    tecnologias: ['Claude', 'Producto SaaS', 'Vercel'],
     estado: 'En producción',
     enlace: 'https://www.petraeventos.com/',
     enlaceTexto: 'Visitar petraeventos.com',
@@ -279,8 +279,12 @@ export const formacion = [
 
 export const habilidades = [
   {
+    grupo: 'Stack de trabajo',
+    items: ['Claude', 'Supabase', 'Vercel'],
+  },
+  {
     grupo: 'Desarrollo',
-    items: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Supabase', 'Python', 'Vercel', 'GitHub', 'Figma'],
+    items: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Python', 'GitHub', 'Figma'],
   },
   {
     grupo: 'Educación y robótica',
@@ -292,7 +296,7 @@ export const habilidades = [
   },
   {
     grupo: 'IA y productividad',
-    items: ['Claude', 'Cursor', 'Vercel AI SDK'],
+    items: ['Cursor', 'Vercel AI SDK'],
   },
   {
     grupo: 'Idiomas',
@@ -302,5 +306,5 @@ export const habilidades = [
 
 export const sobreMi = [
   'Empecé dando clases de robótica y computación: chicos desde los 5 años, adolescentes y adultos mayores. Hoy soy docente de informática en primaria y secundaria y coordinador de tecnología en un colegio. Trabajo con un enfoque STEAM: combino disciplinas para resolver problemas reales y busco que cada estudiante se sienta valorado y con ganas de aprender.',
-  'Trabajando en escuelas empecé a desarrollar software para resolver problemas reales de las instituciones, y después para clientes como Los Jazmines Eventos. Hoy busco proyectos de desarrollo de software, seguir aprendiendo y enseñar lo que aprendo.',
+  'Trabajando en escuelas empecé a desarrollar software para resolver problemas reales de las instituciones, y después para clientes como Los Jazmines Eventos. Trabajo como vibecoder fullstack: diseño cada solución y la desarrollo con Claude, con Supabase para los datos y Vercel para publicarla. Hoy busco proyectos de desarrollo de software, seguir aprendiendo y enseñar lo que aprendo.',
 ]
