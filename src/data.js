@@ -141,22 +141,6 @@ export const proyectos = [
     enlace: 'https://www.petraeventos.com/',
     enlaceTexto: 'Visitar petraeventos.com',
   },
-  {
-    nombre: 'Classroom ICVL',
-    visual: 'aulas',
-    tipo: 'Coordinación TIC',
-    texto: 'Organización y administración de 86 aulas de Google Classroom para unos 500 alumnos.',
-    tecnologias: ['Google Workspace'],
-    estado: 'Activo',
-  },
-  {
-    nombre: 'El Colectivo',
-    visual: 'colectivo',
-    tipo: 'Proyecto propio',
-    texto: 'App web gamificada (PWA) con temática de colectivo porteño.',
-    tecnologias: ['React', 'Vite', 'Canvas', 'Tailwind'],
-    estado: 'Prototipo',
-  },
 ]
 
 // periodo: por ejemplo '2024 — Actualidad'
