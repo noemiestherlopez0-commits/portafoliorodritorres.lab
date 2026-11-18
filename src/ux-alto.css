@@ -55,3 +55,90 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* ═══ Cifra de edades: el número crece y cambia de letra con la edad ═══ */
+.cifras dt.edades {
+  display: flex;
+  align-items: baseline;
+  gap: 0.28em;
+  overflow: visible;
+}
+.edades-desde {
+  letter-spacing: -0.03em;
+}
+.edad {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  letter-spacing: 0;
+  font-variant-numeric: normal;
+}
+.edad-nino {
+  font-family: 'Fredoka', var(--letra);
+  font-weight: 700;
+}
+.edad-urbana {
+  font-family: 'Permanent Marker', var(--letra);
+  font-weight: 400;
+  transform: rotate(-4deg);
+}
+.edad-moderna {
+  font-family: 'Unbounded', var(--letra);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.edad-tango {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: 'lnum' 1;
+  color: var(--tinta);
+}
+.edad-mas {
+  font-family: var(--letra);
+  font-weight: 650;
+  margin-left: 0.04em;
+}
+.edad-salto {
+  animation: edad-salto 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.4);
+}
+.edad-urbana.edad-salto {
+  animation-name: edad-salto-urbana;
+}
+@keyframes edad-salto {
+  from { transform: scale(0.6); opacity: 0.3; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes edad-salto-urbana {
+  from { transform: scale(0.6) rotate(-4deg); opacity: 0.3; }
+  to { transform: scale(1) rotate(-4deg); opacity: 1; }
+}
+
+/* Sombrero de tango arriba del 75 */
+.sombrero {
+  position: absolute;
+  left: -0.02em;
+  bottom: 0.8em;
+  width: 1.08em;
+  height: auto;
+  transform: rotate(-12deg);
+  transform-origin: 50% 100%;
+  animation: sombrero-cae 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.25) both;
+  pointer-events: none;
+}
+.sombrero-copa,
+.sombrero-ala {
+  fill: var(--tinta);
+}
+.sombrero-cinta {
+  fill: var(--superficie);
+  opacity: 0.85;
+}
+@keyframes sombrero-cae {
+  from { transform: translateY(-70%) rotate(-40deg); opacity: 0; }
+  to { transform: translateY(0) rotate(-12deg); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sombrero,
+  .edad-salto { animation: none; }
+}

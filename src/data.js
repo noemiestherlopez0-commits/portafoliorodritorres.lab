@@ -23,7 +23,7 @@ export const perfil = {
 export const cifras = [
   { valor: '+500', texto: 'alumnos asistieron a mis clases' },
   { valor: '10', texto: 'instituciones confiaron en mí' },
-  { valor: '3', texto: 'años dando clases' },
+  { valor: '+3', texto: 'años dando clases' },
   { valor: '5 a 75+', texto: 'años: las edades con las que trabajo' },
 ]
 
