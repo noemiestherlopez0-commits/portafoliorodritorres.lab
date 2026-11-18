@@ -114,6 +114,22 @@ export const proyectos = [
     estado: 'En producción',
   },
   {
+    nombre: 'Seguimiento de Clases',
+    imagen: '/proyectos/seguimiento.webp',
+    destacado: true,
+    tipo: 'Herramienta propia',
+    texto: 'Mi sistema personal para organizar todo lo que enseño en varias instituciones.',
+    caso: {
+      problema:
+        'Doy clases en varias escuelas y necesitaba tener en un solo lugar qué doy, cuándo y dónde, y cómo avanza cada alumno.',
+      solucion:
+        'Desarrollé un sistema con horario semanal por institución, cursos, alumnos, planificaciones y notas, con anotaciones sobre el desempeño de cada alumno y opción de exportar.',
+      resultado: 'Lo uso a diario para organizar mis clases y el seguimiento de mis alumnos.',
+    },
+    tecnologias: [],
+    estado: 'En uso',
+  },
+  {
     nombre: 'Petra · Cotizador para eventos',
     imagen: '/proyectos/petra.webp',
     destacado: true,
