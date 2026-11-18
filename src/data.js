@@ -100,7 +100,7 @@ export const proyectos = [
   },
   {
     nombre: 'Gestión de Notas · ICVL Secundaria',
-    visual: 'notas', // dibujo de la tarjeta: notas | aulas | colectivo
+    imagen: '/proyectos/notas-icvl.webp',
     destacado: true,
     tipo: 'Institución educativa · 2025',
     texto: 'Sistema propio de calificaciones para la secundaria.',
