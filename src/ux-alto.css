@@ -142,3 +142,14 @@
   .sombrero,
   .edad-salto { animation: none; }
 }
+
+/* Links de una experiencia (por ejemplo, la web y el Instagram de Despacio) */
+.fila-enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  margin-top: 0.35rem;
+}
+.fila-enlaces .enlace {
+  margin-top: 0;
+}

@@ -24,7 +24,7 @@ export const cifras = [
   { valor: '+500', texto: 'alumnos asistieron a mis clases' },
   { valor: '10', texto: 'instituciones confiaron en mí' },
   { valor: '+3', texto: 'años dando clases' },
-  { valor: '5 a 75+', texto: 'años: las edades con las que trabajo' },
+  { valor: '5 a 75+', texto: 'clases para todas las edades' },
 ]
 
 export const redes = [
@@ -196,6 +196,10 @@ export const experiencia = [
     descripcion:
       'Cooperativa que formé junto con otros talleristas. Di talleres de robótica para chicos y adolescentes de 5 a 17 años.',
     etiquetas: ['Robótica', 'Arduino', 'Cooperativa'],
+    enlaces: [
+      { texto: 'Sitio web', url: 'https://espacioculturaldespacio.my.canva.site/bienvenidos' },
+      { texto: 'Instagram', url: 'https://www.instagram.com/ec_despacio/' },
+    ],
   },
   {
     lugar: 'Colegio Cristiano de Martínez (CCM)',

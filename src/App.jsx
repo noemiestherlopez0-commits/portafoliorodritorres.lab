@@ -154,7 +154,7 @@ function Etiquetas({ items }) {
 }
 
 /* Fila tipo currículum: logo, nombre, cargo y fechas */
-function Fila({ sigla, logo, logoOscuro, titulo, subtitulo, periodo, descripcion, etiquetas }) {
+function Fila({ sigla, logo, logoOscuro, titulo, subtitulo, periodo, descripcion, etiquetas, enlaces }) {
   return (
     <li className="fila">
       <span className={`logo ${logo ? 'logo-imagen' : ''} ${logoOscuro ? 'logo-oscuro' : ''}`} aria-hidden="true">
@@ -168,6 +168,15 @@ function Fila({ sigla, logo, logoOscuro, titulo, subtitulo, periodo, descripcion
         {subtitulo && <p className="fila-sub">{subtitulo}</p>}
         {descripcion && <p className="fila-texto">{descripcion}</p>}
         <Etiquetas items={etiquetas} />
+        {enlaces?.length > 0 && (
+          <div className="fila-enlaces">
+            {enlaces.map((l) => (
+              <a key={l.url} className="enlace" href={l.url} target="_blank" rel="noopener noreferrer">
+                {l.texto} <ArrowUpRight size={14} />
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </li>
   )
@@ -496,6 +505,7 @@ export default function App() {
                 periodo={e.periodo}
                 descripcion={e.descripcion}
                 etiquetas={e.etiquetas}
+                enlaces={e.enlaces}
               />
             ))}
           </ul>
