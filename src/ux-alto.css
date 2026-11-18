@@ -48,3 +48,10 @@
   align-items: center;
   min-height: 2.75rem;
 }
+
+/* Servicios: dos tarjetas lado a lado (tablet y computadora), sin huecos */
+@media (min-width: 700px) {
+  .servicios {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

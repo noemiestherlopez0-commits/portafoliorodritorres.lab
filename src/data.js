@@ -24,7 +24,7 @@ export const cifras = [
   { valor: '+500', texto: 'alumnos asistieron a mis clases' },
   { valor: '10', texto: 'instituciones confiaron en mí' },
   { valor: '3', texto: 'años dando clases' },
-  { valor: '+5 a +75', texto: 'años: las edades con las que trabajo' },
+  { valor: '5 a 75+', texto: 'años: las edades con las que trabajo' },
 ]
 
 export const redes = [
@@ -55,13 +55,6 @@ export const servicios = [
     texto:
       'Sistemas de gestión, cotizadores online y paneles para ordenar el día a día de un negocio. Del primer boceto a la versión que se usa todos los días.',
     ejemplo: 'Ej.: Sistema Los Jazmines Eventos, Petra',
-  },
-  {
-    icono: 'escuela',
-    titulo: 'Tecnología para escuelas',
-    texto:
-      'Sistemas de notas y boletines, organización de Google Classroom y Workspace, y acompañamiento a docentes para usarlos.',
-    ejemplo: 'Ej.: Gestión de Notas ICVL Secundaria, 86 aulas de Classroom',
   },
   {
     icono: 'clases',
@@ -180,7 +173,7 @@ export const experiencia = [
     sigla: 'PD',
     logo: '/logos/potrero.webp',
     logoOscuro: true,
-    cargo: 'Docente de Ciudadanía Digital',
+    cargo: 'Tutor a cargo de Ciudadanía Digital',
     periodo: '2024 — Actualidad',
     descripcion: 'Clases remotas, en vivo y asincrónicas, sobre ciudadanía digital.',
     etiquetas: ['Educación remota', 'Ciudadanía digital'],
@@ -237,10 +230,10 @@ export const experiencia = [
     sigla: 'RM',
     logo: '/logos/martelli.webp',
     logoOscuro: true,
-    cargo: 'Docente de Computación y Técnico en Electrónica',
+    cargo: 'Docente de Computación',
     periodo: '2021',
     descripcion: 'Clases de computación para adultos mayores.',
-    etiquetas: ['Adultos mayores', 'Electrónica'],
+    etiquetas: ['Adultos mayores'],
   },
 ]
 

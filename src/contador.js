@@ -1,6 +1,6 @@
 // Contadores animados para los números destacados (.cifras).
 // Cada número del texto arranca en 0 y sube hasta su valor final.
-// Ej.: "+500" → +0 … +500   ·   "+5 a +75" → +0 a +0 … +5 a +75
+// Ej.: "+500" → +0 … +500   ·   "5 a 75+" → 0 a 0+ … 5 a 75+
 
 const DURACION = 1800 // milisegundos
 
